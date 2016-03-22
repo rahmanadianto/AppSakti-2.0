@@ -1,0 +1,58 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">64dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html -->
+    <dimen name="navigation_drawer_width">280dp</dimen>
+
+    <dimen name="image_header_height">180dp</dimen>
+    <dimen name="socmed_icon_size">20dp</dimen>
+
+    <dimen name="card_height">240dp</dimen>
+    <dimen name="card_image_height">250dp</dimen>
+
+    <dimen name="flexible_space_height">350dp</dimen>
+    <dimen name="flexible_empty_space">144dp</dimen>
+    <dimen name="actionbar_height">?attr/actionBarSize</dimen>
+    <dimen name="actionbar_title_horizontal_offset">@dimen/abc_action_button_min_width_material</dimen>
+    <dimen name="actionbar_title_padding">40dp</dimen>
+
+
+
+    <dimen name="information_padding">40dp</dimen>
+    <dimen name="title_image_width">48dp</dimen>
+    <dimen name="title_image_height">30dp</dimen>
+
+    <dimen name="information_header_text_size">30sp</dimen>
+    <dimen name="card_header_text_size">20sp</dimen>
+    <dimen name="card_item_text_size">20sp</dimen>
+    <dimen name="main_menu_text_size">20sp</dimen>
+    <dimen name="nama_singkatan_text_size">25sp</dimen>
+
+    <dimen name="main_menu_overlay_height">40dp</dimen>
+    <dimen name="main_menu_text_margin">10dp</dimen>
+    <dimen name="first_menu_overlay_height">50dp</dimen>
+    <dimen name="first_menu_margin">15dp</dimen>
+
+    <dimen name="extra_spacing">1dp</dimen>
+
+    <dimen name="intro_text_size">28sp</dimen>
+    <dimen name="intro_text_size_small">20sp</dimen>
+
+    <dimen name="standard_5dp">10dp</dimen>
+    <dimen name="standard_7dp">15dp</dimen>
+    <dimen name="standard_10dp">20dp</dimen>
+    <dimen name="standard_15dp">30dp</dimen>
+    <dimen name="standard_20dp">40dp</dimen>
+    <dimen name="standard_25dp">50dp</dimen>
+    <dimen name="standard_30dp">60dp</dimen>
+    <dimen name="standard_35dp">70dp</dimen>
+    <dimen name="standard_40dp">80dp</dimen>
+    <dimen name="standard_45dp">90dp</dimen>
+    <dimen name="standard_50dp">80dp</dimen>
+    <dimen name="standard_55dp">110dp</dimen>
+    <dimen name="standard_60dp">100dp</dimen>"
+    <dimen name="standard_100dp">120dp</dimen>"
+</resources>

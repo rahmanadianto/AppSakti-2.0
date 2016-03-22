@@ -1,0 +1,110 @@
+<resources>
+	<string name="app_name">Apps Sakti</string>
+
+	<string name="hello_world">Hello world!</string>
+	<string name="action_settings">Settings</string>
+	<string name="title_activity_main">Aplikasi Sakti</string>
+
+	<string name="title_section1">Home</string>
+	<string name="title_section2">OSKM ITB 2015</string>
+	<string name="title_section3">Open House Unit 2015</string>
+	<string name="title_section4">About</string>
+	<string name="title_section5">Team</string>
+
+	<string name="search_title">Search information</string>
+
+
+	<string name="navigation_drawer_open">Open navigation drawer</string>
+	<string name="navigation_drawer_close">Close navigation drawer</string>
+
+	<string name="action_example">Example action</string>
+
+	<string name="title_activity_intro">Aplikasi Sakti</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+	<string name="hello_blank_fragment">Hello blank fragment</string>
+
+	<string name="about_team">
+		<b>Taufiq A Rosyadi</b>\n
+		Sistem dan Teknologi Informasi 2012\n
+		as Project Manager &amp; System Analyst\n\n
+		<b>Gilang Julian S</b>\n
+		Teknik Informatika 2012\n
+		as Lead Programmer\n\n
+		<b>Yanfa Adi Putra</b>\n
+		Teknik Informatika 2012\n
+		as Programmer\n\n
+		<b>Wigy Ramadhan</b>\n
+		Desain Produk 2013\n
+		as Lead UI/UX Designer\n\n
+		<b>Andreas Andika</b>\n
+		Desain Komunikasi Visual 2013\n
+		as Lead Graphic/Motion Designer\n\n
+		<b>Petra Legato</b>\n
+		Desain Komunikasi Visual 2013\n
+		as Graphic/Motion Designer\n\n
+		<b>Mirza Annisa</b>\n
+		Desain Interior 2013\n
+		as UI/UX Designer\n\n
+		<b>Nanda Hadi</b>\n
+		Desain Komunikasi Visual 2013\n
+		as Tim Grafis OSKM\n\n
+		<b>Lauren Hana</b>\n
+		Desain Komunikasi Visual 2013\n
+		as Tim Grafis OSKM\n\n
+		<b>Krisan Faretty</b>\n
+		Desain Komunikasi Visual 2013\n
+		Tim Grafis OSKM\n\n
+		<b>Salma Tsaniya</b>\n
+		Desain Komunikasi Visual 2013\n
+		Tim Grafis OSKM\n\n
+		<b>Hani</b>\n
+		Teknik Geodesi 2013\n
+		Intrakampus OSKM\n\n
+		<b>Indra Karno</b>\n
+		Kimia 2013\n
+		Dokumentasi OSKM\n\n
+	</string>
+	<string name="ohu"><b>Apa itu Open House Unit ITB 2015?</b>\nOHU ITB 2015 merupakan acara tahunan di ITB yg bertujuan untuk memfasilitasi massa ITB
+		untuk menyalurkan minat dan bakatnya ke UKM yg ada di ITB, dan merupakan ajang unjuk
+		kebolehan dari UKM di ITB untuk merekrut anggota.\nAcara: Opening Ceremony, Panggung Utama, Museum OHU, Radio OHU, Bioskop OHU, Parade,
+		Wahana Olahraga, Wahana Keilmuan, Wahana Budaya, Closing Ceremony.\n\n<b>Dimana OHU diadakan?</b>\nDi Kampus ITB Ganesha, Jalan Ganesha No. 10 &amp; 12. Bandung.\n\n<b>Kapan?</b>\nHari Sabtu tanggal 29 Agustus 2015 pukul 08.00 – selesai\n\n<b>Siapa saja yang terlibat dalam OHU ITB 2015?</b>\nOHU ITB 2015 diselenggarakan oleh Keluarga Mahasiswa ITB (KM-ITB), Panitia Open House Unit
+		(OHU) ITB 2015 dan diikuti oleh Mahasiswa ITB, Unit Kegiatan Mahasiswa ITB, serta
+		Komunitas\n\n<b>Kenapa wajib datang ke OHU ITB 2015?</b>\nAcaranya seru-seru, diantaranya:\n\n<b>a. Pre-event Ceremony</b>\nPre-event Ceremony akan dilaksanakan pada Selasa, 25 Agustus 2015 di daerah antara DPR
+		dan sunken. Pre-event mempertunjukkan awal cerita yang dibawa pada OHU kali ini.\n\n<b>b. Opening Ceremony</b>\nOpening Ceremony merupakan acara pembuka OHU 2015. Acara opening ceremony akan dibuka
+		dengan penampilan kolaborasi performance dari 88 UKM yang ada di ITB, mulai dari rumpun
+		pendidikan, agama, media, budaya, kajian, dan olahraga. Acara ini merupakan daya tarik
+		terbesar dalam acara OHU 2015 karena untuk pertama kalinya bisa menyatukan UKM yang ada
+		di ITB dalam bentuk kolaborasi unit-unit.\n\n<b>c. Panggung Utama</b>\nPanggung utama menjadi pusat keramaian dari OHU 2014. Di panggung utama akan
+		diselenggarakan opening ceremony, closing ceremony, dan penampilan dari seluruh UKM yang
+		ada di ITB. Setiap UKM akan diberikan waktu 15 – 20 menit untuk menampilkan performance
+		terbaiknya di panggung utama.\n\n<b>d. Museum OHU</b>\nUKM di ITB terkenal dengan karya dan kreativitasnya. Agar karya tersebut dapat lebih
+		dikenal dan dinikmati oleh khalayak ramai, maka dibuatlah sebuah Museum OHU yang berisi
+		dokumentasi kegiatan-kegiatan maupun karya-karya UKM. Museum OHU ini akan dikemas dalam
+		bentuk pameran interaktif berbentuk motion grafis video di dalam Information Center ITB.\n\n<b>e. Radio OHU</b>\nRadio OHU merupakan fasilitas untuk publikasi dan promosi UKM di ITB. Radio OHU merupakan
+		usaha untuk memfasilitasi unit media, unit kajian, dan unit pendidikan dalam menampilkan
+		hasil karya mereka. Radio OHU akan mengintegrasi seluruh tempat di seputaran area
+		OHU sehingga mampu memeriahkan suasana OHU.\n\n<b>f. Bioskop OHU</b>\nBioskop OHU adalah sebuah wahana cinema yang akan menampilkan suatu film “special” yang
+		merupakan karya dari UKM ITB. Bioskop OHU juga merupakan wadah bagi para UKM untuk
+		menunjukkan teasernya dan dikemas seakan-akan berada di cinema. Pemutaran teaser-teaser
+		UKM di awal sebelum film dimulai, akan menjadi wadah promosi eksistensi unit secara
+		visual.\n\n<b>g. Parade</b>\nParade OHU 2015 dikemas dalam bentuk pawai internal kampus yang diikuti oleh seluruh UKM
+		di ITB pada pertengahan acara OHU 2015. Parade ini akan diisi dengan penampilan atraktif
+		dari unit MBWG-ITB , cosplay dari Genshiken ITB, dan UKM lainnya. Parade ini bertujuan
+		untuk lebih meningkatkan euforia dari pengunjung dan menunjukkan keanekaragaman UKM di
+		ITB. Pawai ini juga akan dimeriahkan oleh maskot OHU ITB 2015.\n\n<b>h. Wahana Olahraga</b>\nWahana Olahraga adalah tempat bagi UKM rumpun olahraga untuk bisa menampilkan
+		kemampuannya dalam berolahraga. Selain itu, setiap UKM dari rumpun olahraga dapat membuat
+		permainan yang berkaitan dengan bidangnya sehingga para pengunjung bisa menikmati bahkan
+		ikut berpartisipasi di dalamnya.\n\n<b>i. Wahana Keilmuan</b>\nWahana Keilmuan adalah sebuah wahana yang berisi permainan-permainan yang berhubungan
+		dengan keilmuan. Ini merupakan sarana UKM rumpun pendidikan, kajian, dan agama untuk
+		menunjukkan identitasnya dalam bentuk permainan yang menarik dan berbasis pola pikir dan
+		keilmuan.\n\n<b>j. Wahana Budaya</b>\nWahana Budaya adalah sebuah wahana yang berisi pertunjukan-pertunjukan yang berhubungan
+		dengan identitas budayanya. Di sini, UKM rumpun seni dan budaya dapat berunjuk diri
+		dengan menunjukkan permainan yang unik karena permainan tersebut berasal dari tiap-tiap
+		daerah masing-masing dari UKM budaya.\n\n<b>k. Closing Ceremony</b>\nSeluruh rangkaian kegiatan OHU 2015 akan ditutup dalam closing ceremony yang berisi
+		performance drama musikal digabung dengan video mapping sehingga penutupan akan menjadi
+		puncak dan penyelesaian acara OHU 2015. Selain itu ada  penampilan kolaborasi dari UKM
+		yang ada di ITB.\n\n<b>Acara OHU ITB 2015 tidak dipungut biaya dan terbuka untuk umum</b>\n\n
+	</string>
+	<string name="title_activity_search">SearchActivity</string>
+</resources>

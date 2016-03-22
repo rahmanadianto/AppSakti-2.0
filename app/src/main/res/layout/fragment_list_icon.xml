@@ -1,0 +1,65 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:tools="http://schemas.android.com/tools"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent"
+			 android:background="#fff"
+			 tools:context="com.hmif.appssakti.ListIconFragment">
+
+	<ImageView
+		android:id="@+id/card_header_image"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/flexible_space_height"
+		android:scaleType="centerCrop"
+		android:src="@drawable/apps_header_logo"/>
+
+	<com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+		android:id="@+id/scroll_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:minHeight="810dp"
+			android:paddingTop="@dimen/flexible_space_height">
+
+			<LinearLayout
+				android:id="@+id/menu_container"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:paddingTop="@dimen/standard_15dp"
+				android:paddingLeft="@dimen/standard_15dp"
+				android:paddingRight="@dimen/standard_15dp"
+				android:paddingBottom="@dimen/standard_5dp"
+				android:orientation="vertical"
+				android:background="#fff"/>
+
+		</LinearLayout>
+
+	</com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+	<View
+		android:id="@+id/overlay_view"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/flexible_space_height"
+		android:background="#FFCB01"/>
+
+	<include layout="@layout/toolbar"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/flexible_space_height"
+		android:orientation="vertical">
+
+		<TextView
+			android:id="@+id/title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textColor="@color/card_header_text"
+			android:textSize="@dimen/card_header_text_size"
+			android:textStyle="bold"
+			android:text="Page Title"/>
+
+	</LinearLayout>
+
+</FrameLayout>

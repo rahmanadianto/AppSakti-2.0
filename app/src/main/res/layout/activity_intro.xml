@@ -1,0 +1,59 @@
+<RelativeLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+ 	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/fragment"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+
+	<android.support.v4.view.ViewPager
+		android:id="@+id/pager"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="@drawable/intro1"/>
+
+	<View
+		android:id="@+id/divider"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="@dimen/standard_60dp"
+		android:layout_marginLeft="@dimen/standard_50dp"
+		android:layout_marginRight="@dimen/standard_50dp"
+		android:background="#fff"/>
+
+	<com.hmif.custom.CirclePageIndicator
+		android:id="@+id/circle_indicator"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingLeft="@dimen/standard_5dp"
+		android:paddingRight="@dimen/standard_5dp"
+		android:layout_alignTop="@id/divider"
+		android:layout_marginTop="@dimen/standard_20dp"
+		android:layout_centerHorizontal="true"/>
+
+	<Button
+		android:id="@+id/btn_lewati"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignTop="@id/divider"
+		android:layout_alignLeft="@id/divider"
+		android:layout_marginLeft="-15dp"
+		android:elevation="5dp"
+		android:background="#00000000"
+		android:textColor="#fff"
+		android:text="Lewati"/>
+
+	<Button
+		android:id="@+id/btn_selesai"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignTop="@id/divider"
+		android:layout_alignRight="@id/divider"
+		android:layout_marginRight="-15dp"
+		android:elevation="5dp"
+		android:background="#00000000"
+		android:textColor="#fff"
+		android:text="Selesai"/>
+
+</RelativeLayout>

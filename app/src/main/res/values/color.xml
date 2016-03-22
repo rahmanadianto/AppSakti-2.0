@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="drawer_text">#fff</color>
+	<color name="drawer_background">#2879FF</color>
+	<color name="list_item_text_general">#00695C</color>
+	<color name="list_item_text_detail">#00695C</color>
+
+	<color name="hmif_color">#FFCB01</color>
+	<color name="information_header_background">@color/hmif_color</color>
+	<color name="card_header_text">#fff</color>
+
+	<color name="main_menu_text">#fff</color>
+
+	<color name="title_color">#fff</color>
+
+	<color name="main_menu_overlay_color">#44ffffff</color>
+</resources>

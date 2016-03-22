@@ -1,0 +1,44 @@
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+	android:background="@color/drawer_background"
+	tools:context="com.hmif.appssakti.NavigationDrawerFragment">
+
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+		<ImageView
+			android:id="@+id/navbar_header"
+			android:layout_width="match_parent"
+			android:layout_height="150dp"
+			android:scaleType="centerCrop"
+			android:src="@drawable/navbar_header"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="60dp"
+			android:layout_marginBottom="25dp"
+			android:layout_alignBottom="@id/navbar_header"
+			android:layout_alignLeft="@id/navbar_header"
+			android:text="Apps Sakti"
+			android:textStyle="bold"
+			android:textSize="23sp"
+			android:textColor="@color/drawer_text"/>
+
+		<ListView
+			android:id="@+id/drawer_list_view"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:layout_below="@id/navbar_header"
+			android:choiceMode="singleChoice"
+			android:divider="#236ADD"
+			android:dividerHeight="1dp"/>
+
+	</RelativeLayout>
+
+</LinearLayout>

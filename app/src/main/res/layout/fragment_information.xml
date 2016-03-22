@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			 xmlns:tools="http://schemas.android.com/tools"
+			 android:layout_width="match_parent"
+			 android:layout_height="match_parent"
+			 android:background="#fff"
+			 tools:context="com.hmif.appssakti.ListIconFragment">
+
+<ImageView
+	android:id="@+id/card_header_image"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/flexible_space_height"
+	android:scaleType="centerCrop"
+	android:src="@drawable/apps_header_logo"/>
+
+<com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+	android:id="@+id/scroll_view"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:fillViewport="true">
+
+	<LinearLayout
+		android:id="@+id/scroll_container"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:minHeight="810dp"
+		android:paddingTop="@dimen/flexible_space_height">
+
+		<LinearLayout
+			android:id="@+id/container_info"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="40dp"
+			android:background="#fff"
+			android:orientation="vertical">
+
+			<!-- information header -->
+			<LinearLayout
+				android:id="@+id/information_header"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingTop="20dp"
+				android:paddingLeft="40dp"
+				android:paddingRight="40dp"
+				android:paddingBottom="20dp"
+				android:background="@color/information_header_background">
+
+				<TextView
+					android:id="@+id/nama_lembaga_singkatan"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="HMIF"
+					android:textSize="@dimen/nama_singkatan_text_size"
+					android:textStyle="bold"
+					android:textColor="#fff"/>
+
+				<TextView
+					android:id="@+id/nama_lembaga"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textStyle="bold"
+					android:text="Himpunan Mahasiswa Informatika"/>
+
+				<!-- socmed line 1 -->
+				<org.apmem.tools.layouts.FlowLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="5dp"
+					android:orientation="horizontal">
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="5dp"
+						android:orientation="horizontal">
+
+						<ImageView
+							android:id="@+id/socmed1_image"
+							android:layout_width="@dimen/socmed_icon_size"
+							android:layout_height="@dimen/socmed_icon_size"
+							android:layout_gravity="center_vertical"
+							android:src="@drawable/icon_fb_grey"/>
+
+						<TextView
+							android:id="@+id/socmed1_text"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dp"
+							android:layout_marginRight="20dp"
+							android:text="Himpunan Mahasiswa Rekayasa Kehutanan - HMH 'Selva'"/>
+
+					</LinearLayout>
+
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="5dp"
+						android:orientation="horizontal">
+
+						<ImageView
+							android:id="@+id/socmed2_image"
+							android:layout_width="@dimen/socmed_icon_size"
+							android:layout_height="@dimen/socmed_icon_size"
+							android:layout_gravity="center_vertical"
+							android:src="@drawable/icon_line_grey"/>
+
+						<TextView
+							android:id="@+id/socmed2_text"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dp"
+							android:layout_marginRight="20dp"
+							android:text="\@HMIF_ITB"/>
+
+					</LinearLayout>
+
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="5dp"
+						android:orientation="horizontal">
+
+						<ImageView
+							android:id="@+id/socmed3_image"
+							android:layout_width="@dimen/socmed_icon_size"
+							android:layout_height="@dimen/socmed_icon_size"
+							android:layout_gravity="center_vertical"
+							android:src="@drawable/icon_twitter_grey"/>
+
+						<TextView
+							android:id="@+id/socmed3_text"
+							android:layout_width="0dp"
+							android:layout_weight="1"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dp"
+							android:layout_marginRight="20dp"
+							android:text="L7HDS87"/>
+
+					</LinearLayout>
+
+					<LinearLayout
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="5dp"
+						android:orientation="horizontal">
+
+						<ImageView
+							android:id="@+id/socmed4_image"
+							android:layout_width="@dimen/socmed_icon_size"
+							android:layout_height="@dimen/socmed_icon_size"
+							android:layout_gravity="center_vertical"
+							android:src="@drawable/icon_web_grey"/>
+
+						<TextView
+							android:id="@+id/socmed4_text"
+							android:layout_width="0dp"
+							android:layout_weight="1"
+							android:layout_height="wrap_content"
+							android:layout_marginLeft="5dp"
+							android:layout_marginRight="20dp"
+							android:text="L7HDS87"/>
+
+					</LinearLayout>
+
+				</org.apmem.tools.layouts.FlowLayout>
+
+				<TextView
+					android:id="@+id/alamat_lembaga"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="Labtek V lantai 1, Gedung Benny Subianto\nJalan Ganeca no 10, Bandung 40132"/>
+
+			</LinearLayout>
+
+
+		</LinearLayout>
+
+
+	</LinearLayout>
+
+</com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+<View
+	android:id="@+id/overlay_view"
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/flexible_space_height"
+	android:background="#FFCB01"/>
+
+<include layout="@layout/toolbar"/>
+
+<LinearLayout
+	android:layout_width="match_parent"
+	android:layout_height="@dimen/flexible_space_height"
+	android:orientation="vertical">
+
+	<ImageView
+		android:id="@+id/title_image"
+		android:layout_width="@dimen/title_image_width"
+		android:layout_height="@dimen/title_image_height"
+		android:src="@drawable/icon_oskm_white"/>
+
+</LinearLayout>
+
+</FrameLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+			  android:layout_width="match_parent"
+			  android:layout_height="80dp"
+			  android:paddingLeft="10dp"
+			  android:paddingRight="10dp"
+			  android:orientation="horizontal">
+
+		<ImageView
+			android:id="@+id/item_icon"
+			android:layout_width="80dp"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
+			android:paddingTop="10dp"
+			android:paddingBottom="10dp"
+			android:src="@drawable/logo_hmif"/>
+
+		<TextView
+			android:id="@+id/item_text_general"
+			android:layout_width="0dp"
+			android:layout_height="wrap_content"
+			android:layout_weight="1"
+			android:layout_marginLeft="10dp"
+			android:layout_gravity="center_vertical"
+			android:text="HMIF"/>
+
+
+</LinearLayout>

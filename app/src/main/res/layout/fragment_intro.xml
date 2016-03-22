@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+				xmlns:tools="http://schemas.android.com/tools"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				tools:context="com.hmif.intro.IntroFragment">
+
+	<ImageView
+		android:id="@+id/image"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="centerCrop"
+		android:src="@drawable/intro1"/>
+
+	<TextView
+		android:id="@+id/detail_intro"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:layout_marginBottom="@dimen/standard_100dp"
+		android:layout_alignParentBottom="true"
+		android:layout_marginLeft="@dimen/standard_50dp"
+		android:layout_marginRight="@dimen/standard_50dp"
+		android:gravity="center_horizontal"
+		android:textSize="@dimen/intro_text_size_small"
+		android:textColor="#fff"
+		android:text="Cakap dan mandiri dalam memelihara dan memajukan ilmu pengetahuan"/>
+
+
+	<TextView
+		android:id="@+id/judul_intro"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:gravity="center_horizontal"
+		android:layout_marginBottom="@dimen/standard_5dp"
+		android:layout_marginLeft="@dimen/standard_50dp"
+		android:layout_marginRight="@dimen/standard_50dp"
+		android:textStyle="bold"
+		android:textColor="#fff"
+		android:layout_above="@id/detail_intro"
+		android:text="Memajukan ilmu pengetahuan"
+		android:textSize="@dimen/intro_text_size"/>
+
+</RelativeLayout>
