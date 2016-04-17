@@ -88,7 +88,8 @@
 							android:layout_height="wrap_content"
 							android:layout_marginLeft="5dp"
 							android:layout_marginRight="20dp"
-							android:text="Himpunan Mahasiswa Rekayasa Kehutanan - HMH 'Selva'"/>
+							android:text="HMIF ITB"
+							android:onClick="facebookIntent" />
 
 					</LinearLayout>
 
@@ -104,7 +105,7 @@
 							android:layout_width="@dimen/socmed_icon_size"
 							android:layout_height="@dimen/socmed_icon_size"
 							android:layout_gravity="center_vertical"
-							android:src="@drawable/icon_line_grey"/>
+							android:src="@drawable/icon_twitter_grey"/>
 
 						<TextView
 							android:id="@+id/socmed2_text"
@@ -112,7 +113,8 @@
 							android:layout_height="wrap_content"
 							android:layout_marginLeft="5dp"
 							android:layout_marginRight="20dp"
-							android:text="\@HMIF_ITB"/>
+							android:text="\@HMIF_ITB"
+							android:onClick="twitterIntent" />
 
 					</LinearLayout>
 
@@ -128,7 +130,7 @@
 							android:layout_width="@dimen/socmed_icon_size"
 							android:layout_height="@dimen/socmed_icon_size"
 							android:layout_gravity="center_vertical"
-							android:src="@drawable/icon_twitter_grey"/>
+							android:src="@drawable/icon_line_grey"/>
 
 						<TextView
 							android:id="@+id/socmed3_text"
@@ -137,7 +139,8 @@
 							android:layout_height="wrap_content"
 							android:layout_marginLeft="5dp"
 							android:layout_marginRight="20dp"
-							android:text="L7HDS87"/>
+							android:text="L7HDS87"
+							android:onClick="lineIntent" />
 
 					</LinearLayout>
 
@@ -161,7 +164,7 @@
 							android:layout_height="wrap_content"
 							android:layout_marginLeft="5dp"
 							android:layout_marginRight="20dp"
-							android:text="L7HDS87"/>
+							android:text="www.inkubatorit.com"/>
 
 					</LinearLayout>
 

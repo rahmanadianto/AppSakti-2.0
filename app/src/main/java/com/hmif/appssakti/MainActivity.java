@@ -1,19 +1,22 @@
 package com.hmif.appssakti;
 
-import android.app.SearchManager;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.MenuItemCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+import android.widget.Toast;
 
 import com.hmif.custom.MainMenuListener;
 import com.hmif.custom.OnCardClickListener;
@@ -25,7 +28,6 @@ import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.List;
 
 
@@ -37,6 +39,8 @@ public class MainActivity extends AppCompatActivity
 	public static final int PLAIN_INFORMATION = 2;
 	public static JSONObject searchObj;
 	public static int searchType;
+
+	//
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -58,6 +62,11 @@ public class MainActivity extends AppCompatActivity
 	private static final int STATE_SHOW_BURGER = 1;
 	private static final int STATE_HIDE_BURGER = 0;
 	private int state;
+
+	//Social Media Intent
+	private String facebook;
+	private String twitter;
+	private String line;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -89,58 +98,61 @@ public class MainActivity extends AppCompatActivity
 		state = STATE_SHOW_BURGER;
 		FragmentManager fragmentManager = getSupportFragmentManager();
 		switch(position){
-			case 0 : fragmentManager.beginTransaction()
-					 	.replace(R.id.container, MainMenuFragment.newInstance(this, mainMenuItem,
-								mainMenuIcon))
-					 	.commit();
-					 break;
-			case 1 : fragmentManager.beginTransaction()
-						.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-								.layout.fragment_about_oskm))
-						.commit();
-					 break;
+			//Home
+			case 0 :
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, MainMenuFragment.newInstance(this, mainMenuItem,
+							mainMenuIcon))
+					.commit();
+				 break;
+			//OSKM ITB
+			case 1 :
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
+							.layout.fragment_about_oskm))
+					.commit();
+				 break;
+			//Open House Unit
 			case 2:
-//					JSONObject obj = null;
-//					try {
-//						obj = getJSONObject("ohu").getJSONObject("isi");
-//					} catch (JSONException e) {
-//						e.printStackTrace();
-//					}
-					fragmentManager.beginTransaction()
-						.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-								.layout.fragment_ohu))
-						.commit();
-					break;
-			case 3:  fragmentManager.beginTransaction()
-						.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-								.layout.fragment_about_apps))
-						.commit();
-					 break;
-			case 4:  fragmentManager.beginTransaction()
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
+							.layout.fragment_ohu))
+					.commit();
+				break;
+			//About
+			case 3:
+				fragmentManager.beginTransaction()
+					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
+							.layout.fragment_about_apps))
+					.commit();
+				 break;
+			//Team
+			case 4:
+				fragmentManager.beginTransaction()
 					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
 							.layout.fragment_team))
 					.commit();
 				break;
-//			default: fragmentManager.beginTransaction()
-//					.replace(R.id.container, ListIconFragment.newInstance(R.layout
-//									.text_icon_item, unitText, unitDetail, unitIcon))
-//					.commit();
+
 		}
 	}
 
 	public void restoreActionBar() {
-//		ActionBar actionBar = getSupportActionBar();
-//		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-//		actionBar.setDisplayShowTitleEnabled(true);
-//		actionBar.setTitle(mTitle);
-		//getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		try {
+			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		}
+		catch (Exception ex) {
+			String to_toast = "Don't worry, I'll fix it soon";
+			Toast toast = Toast.makeText(getApplicationContext(), to_toast, Toast.LENGTH_SHORT);
+			toast.show();
+		}
 	}
 
 	@Override
 	protected void onResume() {
 		super.onResume();
 		FragmentManager fragmentManager = getSupportFragmentManager();
+
 		if(searchObj != null){
 			if(searchType == PLAIN_INFORMATION){
 				fragmentManager.beginTransaction()
@@ -148,13 +160,15 @@ public class MainActivity extends AppCompatActivity
 						.replace(R.id.container, PlainInformationFragment.newInstance(searchObj))
 						.addToBackStack(null)
 						.commit();
-			}else if(searchType == INFORMATION){
+			}
+			else if(searchType == INFORMATION){
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, LembagaInformationFragment.newInstance(searchObj))
 						.addToBackStack(null)
 						.commit();
-			}else if(searchType == MENU_LIST){
+			}
+			else if(searchType == MENU_LIST){
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, ListIconFragment.newInstance(R.layout
@@ -162,6 +176,7 @@ public class MainActivity extends AppCompatActivity
 						.addToBackStack(null)
 						.commit();
 			}
+
 			searchObj = null;
 			searchType = -1;
 		}
@@ -208,9 +223,10 @@ public class MainActivity extends AppCompatActivity
 	public void onCardClicked(int type, JSONObject obj) {
 		state = STATE_HIDE_BURGER;
 		FragmentManager fragmentManager = getSupportFragmentManager();
-		switch(type){
-			case MENU_LIST:
 
+		switch(type){
+			//Memunculkan Menu lain atau card lain
+			case MENU_LIST:
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, ListIconFragment
@@ -218,13 +234,17 @@ public class MainActivity extends AppCompatActivity
 						.addToBackStack(null)
 						.commit();
 				break;
+
+			//Menunculkan informasi
 			case INFORMATION:
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, LembagaInformationFragment.newInstance(obj))
 						.addToBackStack(null)
 						.commit();
+				setSocmedIntent(obj);
 				break;
+
 			case PLAIN_INFORMATION:
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
@@ -264,7 +284,6 @@ public class MainActivity extends AppCompatActivity
 		try {
 			switch (code) {
 				case 0:
-					System.out.println(getJSONObject("kemahasiswaan").toString());
 					onCardClicked(MENU_LIST, getJSONObject("kemahasiswaan"));
 					break;
 				case 1:
@@ -314,4 +333,78 @@ public class MainActivity extends AppCompatActivity
 	public boolean isBurgerShow(){
 		return state == STATE_SHOW_BURGER;
 	}
+
+
+	//Social Media information for intent
+	public void setSocmedIntent(JSONObject json) {
+
+		try {
+			if (json.has("facebook") && !json.getString("facebook").equals("-")) {
+                facebook = json.getString("facebook");
+            }
+			if (json.has("twitter") && !json.getString("twitter").equals("-")) {
+				twitter = json.getString("twitter");
+			}
+			if (json.has("line") && !json.getString("line").equals("-")) {
+				line = json.getString("line");
+			}
+		} catch (JSONException e) {
+			String to_toast = "Don't worry, I'll fix it soon";
+			Toast toast = Toast.makeText(getApplicationContext(), to_toast, Toast.LENGTH_SHORT);
+			toast.show();
+		}
+	}
+
+	//onClick callback
+	public  void facebookIntent(View view) {
+
+		String url = "https://www.facebook.com/" + facebook;
+		Context ctx = getApplicationContext();
+		PackageManager pm = ctx.getPackageManager();
+
+		try {
+			ApplicationInfo applicationInfo = pm.getApplicationInfo("com.facebook.katana", 0);
+			if (applicationInfo.enabled) {
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + url));
+				startActivity(intent);
+			}
+		}
+		catch (PackageManager.NameNotFoundException ignored) {
+		}
+	}
+
+	public void twitterIntent(View view) {
+
+		try {
+			//try to open page in twitter native app.
+			String screen_name = twitter.replace("@", "");
+			String uri = "twitter://user?screen_name=" + screen_name;    //Cutsom URL
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+			startActivity(intent);
+		}
+		catch (ActivityNotFoundException ex){
+			//twitter native app isn't available, use browser.
+			String uri = "https://www.twitter.com/" + twitter;  //Normal URL
+			Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+			startActivity(i);
+		}
+	}
+
+	public void lineIntent(View view) {
+
+		try {
+			//try to open page in line native app.
+			String uri = "line://ti/p/" + line;    //Cutsom URL
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
+			startActivity(intent);
+		}
+		catch (ActivityNotFoundException ex){
+			//twitter native app isn't available, show message
+			String to_toast = "Anda tidak memiliki aplikasi LINE";
+			Toast toast = Toast.makeText(getApplicationContext(), to_toast, Toast.LENGTH_SHORT);
+			toast.show();
+		}
+
+	}
+
 }

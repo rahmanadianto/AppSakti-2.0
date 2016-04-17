@@ -2,12 +2,10 @@ package com.hmif.appssakti;
 
 
 import android.graphics.Color;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +18,6 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
-import com.hmif.model.Himpunan;
 import com.nineoldandroids.view.ViewHelper;
 
 import org.json.JSONException;
@@ -157,28 +154,32 @@ public class LembagaInformationFragment extends Fragment implements ObservableSc
 	}
 
 	public void setSocmedInfo() throws JSONException {
-		int counter = 0;
-		int deleter = 3;
-		String[] socmedKey = {"facebook", "twitter", "website", "line"};
-		String[] socmedIcon = {"icon_fb_", "icon_twitter_", "icon_web_", "icon_line_"};
-		for(int i=0; i<4; i++){
+
+		String[] socmedKey = {"facebook", "twitter", "line", "website"};
+		String[] socmedIcon = {"icon_fb_", "icon_twitter_", "icon_line_", "icon_web_"};
+
+		for(int i = 0; i < 4; i++){
+
 			if(!jsonObject.getString(socmedKey[i]).equals("-")){
-				socmedText[counter].setText(jsonObject.getString(socmedKey[i]));
-				if(i==2){
-					Linkify.addLinks(socmedText[counter], Linkify.WEB_URLS);
+
+				socmedText[i].setText(jsonObject.getString(socmedKey[i]));
+
+				//website
+				if(i == 3){
+					Linkify.addLinks(socmedText[3], Linkify.WEB_URLS);
 				}
+
 				if(colorCode == GREY){
-					socmedImage[counter].setImageResource(getResources().getIdentifier
+					socmedImage[i].setImageResource(getResources().getIdentifier
 							(socmedIcon[i] + "grey", "drawable", getActivity().getPackageName()));
 				}else if(colorCode == WHITE){
-					socmedImage[counter].setImageResource(getResources().getIdentifier
+					socmedImage[i].setImageResource(getResources().getIdentifier
 							(socmedIcon[i] + "white", "drawable", getActivity().getPackageName()));
 				}
-				counter++;
+
 			}else{
-				socmedText[deleter].setVisibility(View.GONE);
-				socmedImage[deleter].setVisibility(View.GONE);
-				deleter--;
+				socmedText[i].setVisibility(View.GONE);
+				socmedImage[i].setVisibility(View.GONE);
 			}
 		}
 	}
