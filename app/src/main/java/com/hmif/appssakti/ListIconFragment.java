@@ -1,14 +1,12 @@
 package com.hmif.appssakti;
 
 import android.app.Activity;
-import android.graphics.drawable.BitmapDrawable;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -186,8 +184,11 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 
 		AppCompatActivity activity = (AppCompatActivity) getActivity();
 		activity.setSupportActionBar(toolbar);
-		//activity.getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-		activity.getSupportActionBar().setTitle(null);
+
+		try {
+			activity.getSupportActionBar().setTitle(null);
+		}
+		catch (Exception ignored) {}
 
 		ScrollUtils.addOnGlobalLayoutListener(mTitleView, new Runnable() {
 			@Override
@@ -249,7 +250,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 	}
 
 	@Override
-	public void onAttach(Activity activity){
+	public void onAttach(Context activity){
 		super.onAttach(activity);
 		try{
 			mListener = (OnCardClickListener)activity;

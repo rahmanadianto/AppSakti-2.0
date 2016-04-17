@@ -354,7 +354,101 @@
 
 			</LinearLayout>
 
+			<LinearLayout
+				xmlns:android="http://schemas.android.com/apk/res/android"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="3"
+				android:orientation="horizontal"
+				android:paddingTop="@dimen/standard_15dp"
+				android:baselineAligned="false"
+				android:background="#fff">
 
+				<FrameLayout
+					xmlns:card_view="http://schemas.android.com/apk/res-auto"
+					android:id="@+id/card8"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:layout_marginRight="@dimen/standard_7dp"
+					android:foreground="?android:selectableItemBackground">
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<ImageView
+							android:id="@+id/menu_image8"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:scaleType="centerCrop"
+							android:src="@drawable/hmif"/>
+
+						<View
+							android:layout_width="match_parent"
+							android:layout_height="@dimen/main_menu_overlay_height"
+							android:background="@color/main_menu_overlay_color"
+							android:layout_alignParentBottom="true"/>
+
+						<TextView
+							android:id="@+id/menu_text8"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="Kantin"
+							android:textColor="@color/main_menu_text"
+							android:layout_alignParentBottom="true"
+							android:layout_margin="@dimen/main_menu_text_margin"
+							android:textSize="@dimen/main_menu_text_size"
+							android:layout_centerHorizontal="true"
+							android:textStyle="bold"/>
+
+					</RelativeLayout>
+
+				</FrameLayout>
+
+				<FrameLayout
+					xmlns:card_view="http://schemas.android.com/apk/res-auto"
+					android:id="@+id/card9"
+					android:layout_width="0dp"
+					android:layout_height="match_parent"
+					android:layout_weight="1"
+					android:layout_marginLeft="@dimen/standard_7dp"
+					android:foreground="?android:selectableItemBackground">
+
+					<RelativeLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent">
+
+						<ImageView
+							android:id="@+id/menu_image9"
+							android:layout_width="match_parent"
+							android:layout_height="match_parent"
+							android:scaleType="centerCrop"
+							android:src="@drawable/hmif"/>
+
+						<View
+							android:layout_width="match_parent"
+							android:layout_height="@dimen/main_menu_overlay_height"
+							android:background="@color/main_menu_overlay_color"
+							android:layout_alignParentBottom="true"/>
+
+						<TextView
+							android:id="@+id/menu_text9"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:text="Daftar Ruangan"
+							android:textColor="@color/main_menu_text"
+							android:layout_alignParentBottom="true"
+							android:layout_margin="@dimen/main_menu_text_margin"
+							android:textSize="@dimen/main_menu_text_size"
+							android:layout_centerHorizontal="true"
+							android:textStyle="bold"/>
+
+					</RelativeLayout>
+
+				</FrameLayout>
+
+			</LinearLayout>
 
 		</LinearLayout>
 

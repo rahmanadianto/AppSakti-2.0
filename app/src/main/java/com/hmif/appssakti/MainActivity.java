@@ -141,11 +141,7 @@ public class MainActivity extends AppCompatActivity
 		try {
 			getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		}
-		catch (Exception ex) {
-			String to_toast = "Don't worry, I'll fix it soon";
-			Toast toast = Toast.makeText(getApplicationContext(), to_toast, Toast.LENGTH_SHORT);
-			toast.show();
-		}
+		catch (Exception ignored) {}
 	}
 
 	@Override
@@ -269,7 +265,7 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	public JSONObject getJSONObject(String selection) throws JSONException {
-		for(int i=0; i<jsonArray.length(); i++){
+		for(int i = 0; i < jsonArray.length(); i++){
 			JSONObject obj = jsonArray.getJSONObject(i);
 			if(obj.getString("menu").equals(selection))
 				return obj;
@@ -308,6 +304,11 @@ public class MainActivity extends AppCompatActivity
 					array = getJSONObject("lembaga pusat").getJSONArray("isi");
 					onCardClicked(INFORMATION, array.getJSONObject(3));
 					break;
+				case 7:
+					break;
+				case 8:
+					break;
+
 			}
 		}catch (JSONException e) {
 			e.printStackTrace();
@@ -348,11 +349,8 @@ public class MainActivity extends AppCompatActivity
 			if (json.has("line") && !json.getString("line").equals("-")) {
 				line = json.getString("line");
 			}
-		} catch (JSONException e) {
-			String to_toast = "Don't worry, I'll fix it soon";
-			Toast toast = Toast.makeText(getApplicationContext(), to_toast, Toast.LENGTH_SHORT);
-			toast.show();
 		}
+		catch (JSONException ignored) {}
 	}
 
 	//onClick callback
