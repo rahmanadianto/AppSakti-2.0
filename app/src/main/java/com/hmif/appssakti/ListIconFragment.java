@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -81,96 +83,6 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		return v;
 	}
 
-	private void createMenu(LayoutInflater inflater, ViewGroup parent) throws JSONException {
-		JSONArray array = null;
-		if(jsonObject.has("menu")){ array = jsonObject.getJSONArray("isi"); }
-		else if(jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")){
-			array = jsonObject.getJSONArray("info");
-		}
-
-		if(jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
-			mTitleView.setText("Unit");
-			mImageView.setImageResource(R.drawable.header_unit);
-		}else if(jsonObject.has("kategori unit")){
-			mTitleView.setText(jsonObject.getString("kategori unit"));
-			mImageView.setImageResource(getResources().getIdentifier(jsonObject.getString
-					("header foto"), "drawable", getActivity().getPackageName()));
-		}else if(jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
-			mTitleView.setText("Himpunan");
-			mImageView.setImageResource(R.drawable.header_fakultas);
-		}else if(jsonObject.has("nama fakultas")){
-			mTitleView.setText(jsonObject.getString("nama fakultas"));
-			mImageView.setImageResource(getResources().getIdentifier(jsonObject.getString
-					("header foto"), "drawable", getActivity().getPackageName()));
-		}else if(jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
-			mTitleView.setText("Kemahasiswaan");
-			mImageView.setImageResource(R.drawable.home_kemahasiswaan);
-		}
-
-		for(int i=0; i<array.length(); i++){
-			View v = inflater.inflate(R.layout.text_icon_item, menuContainer, false);
-
-			ImageView icon = (ImageView) v.findViewById(R.id.item_icon);
-			listImage.add(icon);
-			TextView textGeneral = (TextView) v.findViewById(R.id.item_text_general);
-			TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
-
-			final JSONObject obj = array.getJSONObject(i);
-			if(obj.has("header foto") && !obj.getString("header foto").equals("-")) {
-				icon.setImageDrawable(getResources().getDrawable(getResources().getIdentifier(obj.getString
-						("header foto"), "drawable", getActivity().getApplicationContext
-						().getPackageName())));
-			}else{
-				icon.setImageDrawable(getResources().getDrawable(R.drawable.apps_header_logo));
-			}
-
-			if(obj.has("nama fakultas")){
-				textGeneral.setText(obj.getString("nama fakultas"));
-				textDetail.setText(obj.getString("nama panjang"));
-			}else if(obj.has("nama himpunan")){
-				textGeneral.setText(obj.getString("nama himpunan"));
-				textDetail.setText(obj.getString("kepanjangan"));
-			}else if(obj.has("kategori unit")){
-				textGeneral.setText(obj.getString("kategori unit"));
-				textDetail.setVisibility(View.GONE);
-			}else if(obj.has("nama unit")){
-				textGeneral.setText(obj.getString("nama unit"));
-				if(obj.getString("kepanjangan").equals("-")){
-					textDetail.setVisibility(View.GONE);
-				}else {
-					textDetail.setText(obj.getString("kepanjangan"));
-				}
-			}else if(obj.has("judul")){
-				textGeneral.setText(obj.getString("judul"));
-				textDetail.setVisibility(View.GONE);
-			}
-
-			if(obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")) {
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.MENU_LIST, obj);
-					}
-				});
-			}else if(obj.has("judul")){
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.PLAIN_INFORMATION, obj);
-					}
-				});
-			}else{
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.INFORMATION, obj);
-					}
-				});
-			}
-			menuContainer.addView(v);
-		}
-	}
-
 	public void setUpView(View v){
 		mFlexibleSpaceImageHeight = getResources().getDimensionPixelSize(R.dimen.flexible_space_height);
 		mActionBarSize = getResources().getDimensionPixelSize(R.dimen.abc_action_bar_default_height_material);
@@ -179,7 +91,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		mScrollView = (ObservableScrollView) v.findViewById(R.id.scroll_view);
 		mScrollView.setScrollViewCallbacks(this);
 		mTitleView = (TextView) v.findViewById(R.id.title);
-		mOverlayView = (View) v.findViewById(R.id.overlay_view);
+		mOverlayView = v.findViewById(R.id.overlay_view);
 		toolbar = (Toolbar) v.findViewById(R.id.toolbar);
 
 		AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -196,6 +108,163 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				updateFlexibleSpaceText(mScrollView.getCurrentScrollY());
 			}
 		});
+	}
+
+	private void createMenu(LayoutInflater inflater, ViewGroup parent) throws JSONException {
+		JSONArray array = null;
+
+		// Get Data
+		if(jsonObject.has("menu")){
+			array = jsonObject.getJSONArray("isi");
+		}
+		else if(jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")){
+			array = jsonObject.getJSONArray("info");
+		}
+
+		// Set Header text and image
+		if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
+			mTitleView.setText("Unit");
+			mImageView.setImageResource(R.drawable.header_unit);
+		}
+		else if (jsonObject.has("kategori unit")) {
+			mTitleView.setText(jsonObject.getString("kategori unit"));
+			mImageView.setImageResource(
+					getResources().getIdentifier(
+							jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
+					)
+			);
+		}
+		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
+			mTitleView.setText("Himpunan");
+			mImageView.setImageResource(R.drawable.header_fakultas);
+		}
+		else if (jsonObject.has("nama fakultas")){
+			mTitleView.setText(jsonObject.getString("nama fakultas"));
+			mImageView.setImageResource(
+					getResources().getIdentifier(
+							jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
+					)
+			);
+		}
+		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
+			mTitleView.setText("Kemahasiswaan");
+			mImageView.setImageResource(R.drawable.home_kemahasiswaan);
+		}
+		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
+			mTitleView.setText("Kantin / Tempat Makan");
+			mImageView.setImageResource(R.drawable.hmif);
+		}
+
+		// Set content
+		int jumlah_content = 0;
+
+		try {
+			jumlah_content = array.length();
+		}
+		catch (NullPointerException ignored) {}
+
+		for (int i = 0; i < jumlah_content; i++){
+			View v = inflater.inflate(layoutId, menuContainer, false);
+
+			ImageView icon = (ImageView) v.findViewById(R.id.item_icon);
+			listImage.add(icon);
+			TextView textGeneral = (TextView) v.findViewById(R.id.item_text_general);
+			TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
+
+			final JSONObject obj = array.getJSONObject(i);
+			if (obj.has("header foto") && !obj.getString("header foto").equals("-")) {
+				icon.setImageDrawable(
+						ResourcesCompat.getDrawable(
+								getResources(),
+								getResources().getIdentifier(
+										obj.getString("header foto"),
+										"drawable",
+										getActivity().getApplicationContext().getPackageName()
+								),
+								null
+						)
+				);
+			}
+			else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
+				Log.d("KANTIN", obj.getString("foto"));
+				icon.setImageDrawable(
+						ResourcesCompat.getDrawable(
+								getResources(),
+								getResources().getIdentifier(
+										obj.getString("foto"),
+										"drawable",
+										getActivity().getApplicationContext().getPackageName()
+								),
+								null
+						)
+				);
+			}
+			else {
+				icon.setImageDrawable(
+						ResourcesCompat.getDrawable(getResources(), R.drawable.apps_header_logo, null));
+			}
+
+			if (obj.has("nama fakultas")){
+				textGeneral.setText(obj.getString("nama fakultas"));
+				textDetail.setText(obj.getString("nama panjang"));
+			}
+			else if (obj.has("nama himpunan")){
+				textGeneral.setText(obj.getString("nama himpunan"));
+				textDetail.setText(obj.getString("kepanjangan"));
+			}
+			else if (obj.has("kategori unit")){
+				textGeneral.setText(obj.getString("kategori unit"));
+				textDetail.setVisibility(View.GONE);
+			}
+			else if (obj.has("nama unit")){
+				textGeneral.setText(obj.getString("nama unit"));
+				if (obj.getString("kepanjangan").equals("-")){
+					textDetail.setVisibility(View.GONE);
+				}
+				else {
+					textDetail.setText(obj.getString("kepanjangan"));
+				}
+			}
+			else if (obj.has("judul")){
+				textGeneral.setText(obj.getString("judul"));
+				textDetail.setVisibility(View.GONE);
+			}
+			else if (obj.has("nama")) { // kantin
+				textGeneral.setText(obj.getString("nama"));
+				textDetail.setVisibility(View.GONE);
+			}
+
+			// Set onClick Listener
+			if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")) {
+				v.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						mListener.onCardClicked(MainActivity.MENU_LIST, obj);
+					}
+				});
+			}
+			else if (obj.has("judul")) {
+				v.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						mListener.onCardClicked(MainActivity.PLAIN_INFORMATION, obj);
+					}
+				});
+			}
+			else {
+				// Set Listener jika bukan kantin, hanya kantin yang memiliki elemen "foto"
+				if (!obj.has("foto")) {
+					v.setOnClickListener(new View.OnClickListener() {
+						@Override
+						public void onClick(View v) {
+							mListener.onCardClicked(MainActivity.INFORMATION, obj);
+						}
+					});
+				}
+			}
+
+			menuContainer.addView(v);
+		}
 	}
 
 	public void updateFlexibleSpaceText(int scrollY) throws NullPointerException{
@@ -233,7 +302,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 	public void onScrollChanged(int scrollY, boolean firstScroll, boolean dragging) {
 		try {
 			updateFlexibleSpaceText(scrollY);
-		}catch (NullPointerException e){
+		}
+		catch (Exception e){
 			e.printStackTrace();
 		}
 	}

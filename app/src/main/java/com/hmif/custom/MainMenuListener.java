@@ -5,5 +5,5 @@ package com.hmif.custom;
  */
 public interface MainMenuListener{
 
-	public void onMenuClicked(int code);
+	void onMenuClicked(int code);
 }

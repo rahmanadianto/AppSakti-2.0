@@ -193,10 +193,7 @@ public class MainActivity extends AppCompatActivity
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
+		// Handle action bar item clicks
 		state = STATE_HIDE_BURGER;
 
 		if(drawerToggle.onOptionsItemSelected(item)){
@@ -215,43 +212,6 @@ public class MainActivity extends AppCompatActivity
 		return super.onOptionsItemSelected(item);
 	}
 
-	@Override
-	public void onCardClicked(int type, JSONObject obj) {
-		state = STATE_HIDE_BURGER;
-		FragmentManager fragmentManager = getSupportFragmentManager();
-
-		switch(type){
-			//Memunculkan Menu lain atau card lain
-			case MENU_LIST:
-				fragmentManager.beginTransaction()
-						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-						.replace(R.id.container, ListIconFragment
-								.newInstance(R.layout.text_icon_item, obj))
-						.addToBackStack(null)
-						.commit();
-				break;
-
-			//Menunculkan informasi
-			case INFORMATION:
-				fragmentManager.beginTransaction()
-						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-						.replace(R.id.container, LembagaInformationFragment.newInstance(obj))
-						.addToBackStack(null)
-						.commit();
-				setSocmedIntent(obj);
-				break;
-
-			case PLAIN_INFORMATION:
-				fragmentManager.beginTransaction()
-						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-						.replace(R.id.container, PlainInformationFragment.newInstance(obj))
-						.addToBackStack(null)
-						.commit();
-				break;
-		}
-
-	}
-
 	private JSONObject loadJSON(int resId) throws IOException, JSONException {
 		String line;
 		StringBuilder result = new StringBuilder();
@@ -265,11 +225,12 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	public JSONObject getJSONObject(String selection) throws JSONException {
-		for(int i = 0; i < jsonArray.length(); i++){
+		for (int i = 0; i < jsonArray.length(); i++){
 			JSONObject obj = jsonArray.getJSONObject(i);
-			if(obj.getString("menu").equals(selection))
+			if (obj.getString("menu").equals(selection))
 				return obj;
 		}
+
 		return null;
 	}
 
@@ -305,6 +266,7 @@ public class MainActivity extends AppCompatActivity
 					onCardClicked(INFORMATION, array.getJSONObject(3));
 					break;
 				case 7:
+					onCardClicked(MENU_LIST, getJSONObject("Kantin"));
 					break;
 				case 8:
 					break;
@@ -313,6 +275,44 @@ public class MainActivity extends AppCompatActivity
 		}catch (JSONException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public void onCardClicked(int type, JSONObject obj) {
+		state = STATE_HIDE_BURGER;
+		FragmentManager fragmentManager = getSupportFragmentManager();
+
+		switch(type){
+			//Memunculkan Menu lain atau card lain
+			case MENU_LIST:
+				fragmentManager.beginTransaction()
+						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+						.replace(R.id.container, ListIconFragment
+								.newInstance(R.layout.text_icon_item, obj))
+						.addToBackStack(null)
+						.commit();
+				break;
+
+			//Menunculkan informasi (ada tulisan di header)
+			case INFORMATION:
+				fragmentManager.beginTransaction()
+						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+						.replace(R.id.container, LembagaInformationFragment.newInstance(obj))
+						.addToBackStack(null)
+						.commit();
+				setSocmedIntent(obj);
+				break;
+
+			//Munculkan informasi tanpa tulisan di header
+			case PLAIN_INFORMATION:
+				fragmentManager.beginTransaction()
+						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+						.replace(R.id.container, PlainInformationFragment.newInstance(obj))
+						.addToBackStack(null)
+						.commit();
+				break;
+		}
+
 	}
 
 	@Override

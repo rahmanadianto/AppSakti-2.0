@@ -7,5 +7,5 @@ import org.json.JSONObject;
  */
 public interface OnCardClickListener {
 
-	public void onCardClicked(int type, JSONObject obj);
+	void onCardClicked(int type, JSONObject obj);
 }
