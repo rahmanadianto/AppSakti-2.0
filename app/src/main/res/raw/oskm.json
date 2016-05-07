@@ -2275,7 +2275,300 @@
 		},
 		{
 			"menu": "Ruang",
-			"isi": []
+			"isi": [
+				{
+					"ruangan": 9009,
+					"gedung": "LFM"
+				},
+				{
+					"ruangan": 9011,
+					"gedung": "Labtek VIII Lantai 2"
+				},
+				{
+					"ruangan": 9012,
+					"gedung": "Labtek VII"
+				},
+				{
+					"ruangan": 9013,
+					"gedung": "Labtek VII"
+				},
+				{
+					"ruangan": 9014,
+					"gedung": "Labtek VII"
+				},
+				{
+					"ruangan": 9015,
+					"gedung": "Labtek VIII Lantai 2"
+				},
+				{
+					"ruangan": 9016,
+					"gedung": "Oktagon Lantai 1"
+				},
+				{
+					"ruangan": 9017,
+					"gedung": "Oktagon Lantai 1"
+				},
+				{
+					"ruangan": 9018,
+					"gedung": "Oktagon Lantai 1"
+				},
+				{
+					"ruangan": 9019,
+					"gedung": "Oktagaon Lantai 2"
+				},
+				{
+					"ruangan": "9020 (Multimedia)",
+					"gedung": "Oktagon Lantai 2"
+				},
+				{
+					"ruangan": 9021,
+					"gedung": "Oktagon Lantai 2"
+				},
+				{
+					"ruangan": 9022,
+					"gedung": "TVST Lantai 1"
+				},
+				{
+					"ruangan": 9023,
+					"gedung": "TVST Lantai 1"
+				},
+				{
+					"ruangan": 9024,
+					"gedung": "TVST Lantai 1"
+				},
+				{
+					"ruangan": 9025,
+					"gedung": "Oktagon Lantai 2"
+				},
+				{
+					"ruangan": 9026,
+					"gedung": "Oktagon Lantai 2"
+				},
+				{
+					"ruangan": 9027,
+					"gedung": "Oktagon Lantai 2"
+				},
+				{
+					"ruangan": 9103,
+					"gedung": "GKU Barat Lantai 1"
+				},
+				{
+					"ruangan": 9104,
+					"gedung": "GKU Barat Lantai 1"
+				},
+				{
+					"ruangan": 9107,
+					"gedung": "GKU Barat Lantai 1"
+				},
+				{
+					"ruangan": 9108,
+					"gedung": "GKU Barat Lantai 1"
+				},
+				{
+					"ruangan": 9114,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9115,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9116,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9121,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9122,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9123,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9124,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9125,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9126,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9127,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9128,
+					"gedung": "GKU Barat Lantai 2"
+				},
+				{
+					"ruangan": 9131,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9132,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9133,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9134,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9135,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9136,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9137,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9138,
+					"gedung": "GKU Barat Lantai 3"
+				},
+				{
+					"ruangan": 9212,
+					"gedung": "GKU Timur Lantai 2"
+				},
+				{
+					"ruangan": 9213,
+					"gedung": "GKU Timur Lantai 2"
+				},
+				{
+					"ruangan": 9214,
+					"gedung": "GKU Timur Lantai 2"
+				},
+				{
+					"ruangan": 9221,
+					"gedung": "GKU Timur Lantai 3"
+				},
+				{
+					"ruangan": 9222,
+					"gedung": "GKU Timur Lantai 3"
+				},
+				{
+					"ruangan": 9223,
+					"gedung": "GKU Timur Lantai 3"
+				},
+				{
+					"ruangan": 9224,
+					"gedung": "GKU Timur Lantai 3"
+				},
+				{
+					"ruangan": "9231 (Multimedia)",
+					"gedung": "GKU Timur Lantai 4"
+				},
+				{
+					"ruangan": 9232,
+					"gedung": "GKU Timur Lantai 4"
+				},
+				{
+					"ruangan": 9233,
+					"gedung": "GKU Timur Lantai 4"
+				},
+				{
+					"ruangan": 9234,
+					"gedung": "GKU Timur Lantai 4"
+				},
+				{
+					"ruangan": 9301,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9302,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9303,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9304,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9305,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9306,
+					"gedung": "Labtek V"
+				},
+				{
+					"ruangan": 9307,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9308,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9309,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9312,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9313,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9314,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9315,
+					"gedung": "Labtek VI"
+				},
+				{
+					"ruangan": 9401,
+					"gedung": "Labtek I Lantai 2"
+				},
+				{
+					"ruangan": 9402,
+					"gedung": "Labtek I Lantai 2"
+				},
+				{
+					"ruangan": 9404,
+					"gedung": "Labtek I Lantai 2"
+				},
+				{
+					"ruangan": 9405,
+					"gedung": "Labtek I Lantai 2"
+				},
+				{
+					"ruangan": "BSC-A",
+					"gedung": "Basic Science A Lantai 4"
+				},
+				{
+					"ruangan": "TVST-A",
+					"gedung": "TVST Lantai 2"
+				},
+				{
+					"ruangan": "TVST-B",
+					"gedung": "TVST Lantai 2"
+				},
+				{
+					"ruangan": "TVST-C",
+					"gedung": "TVST Lantai 2"
+				}
+			]
 		}
 	]
 }

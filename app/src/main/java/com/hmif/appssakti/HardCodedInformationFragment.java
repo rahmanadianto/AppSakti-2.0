@@ -61,7 +61,7 @@ public class HardCodedInformationFragment extends Fragment implements Observable
 		mScrollView = (ObservableScrollView) v.findViewById(R.id.scroll_view);
 		mScrollView.setScrollViewCallbacks(this);
 		mTitleView = (TextView) v.findViewById(R.id.title);
-		mOverlayView = (View) v.findViewById(R.id.overlay_view);
+		mOverlayView = v.findViewById(R.id.overlay_view);
 		toolbar = (Toolbar) v.findViewById(R.id.toolbar);
 
 		AppCompatActivity activity = (AppCompatActivity) getActivity();

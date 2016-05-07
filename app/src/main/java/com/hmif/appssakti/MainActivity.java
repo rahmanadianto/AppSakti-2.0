@@ -269,6 +269,7 @@ public class MainActivity extends AppCompatActivity
 					onCardClicked(MENU_LIST, getJSONObject("Kantin"));
 					break;
 				case 8:
+					onCardClicked(MENU_LIST, getJSONObject("Ruang"));
 					break;
 
 			}

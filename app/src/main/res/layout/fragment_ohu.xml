@@ -75,7 +75,7 @@
 			android:textColor="#878787"
 			android:textSize="17sp"
 			android:textStyle="bold"
-			android:text="Open House Unit 2015"/>
+			android:text="OHU 2015"/>
 
 	</LinearLayout>
 
