@@ -53,6 +53,9 @@ gen-external-apklibs
 Thumbs.db
 ehthumbs.db
 
+## Mac OS ##
+.DS_Store
+
 # Folder config file
 Desktop.ini
 
