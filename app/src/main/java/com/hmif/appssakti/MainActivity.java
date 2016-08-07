@@ -389,13 +389,20 @@ public class MainActivity extends AppCompatActivity
 		PackageManager pm = ctx.getPackageManager();
 
 		try {
-			ApplicationInfo applicationInfo = pm.getApplicationInfo("com.facebook.katana", 0);
-			if (applicationInfo.enabled) {
+			int versionCode = pm.getPackageInfo("com.facebook.katana", 0).versionCode;
+
+			if (versionCode >= 3002850) { //newer versions of fb app
 				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://facewebmodal/f?href=" + url));
 				startActivity(intent);
 			}
+			else { //older versions of fb app
+				Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://fb://page/" + facebook));
+				startActivity(intent);
+			}
 		}
-		catch (PackageManager.NameNotFoundException ignored) {
+		catch (PackageManager.NameNotFoundException e) {
+			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+			startActivity(intent);
 		}
 	}
 
