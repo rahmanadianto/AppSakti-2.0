@@ -3,17 +3,15 @@ package com.hmif.appssakti;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
-import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -53,13 +51,21 @@ public class MainActivity extends AppCompatActivity
 	/**
 	 * Used to store the last screen title. For use in {@link #restoreActionBar()}.
 	 */
-	private CharSequence mTitle;
 
 	private List<String> mainMenuItem;
 	private List<Integer> mainMenuIcon;
-	private Toolbar toolbar;
-	private JSONArray jsonArray;
 
+	// Data
+	private JSONArray jsonArray;
+	private JSONObject aboutOSKM;
+	private JSONObject aboutOHU;
+	private JSONObject aboutApp;
+	private JSONObject kemahasiswaan;
+	private JSONArray lembagaPusat;
+	private JSONObject himpunan;
+	private JSONObject unit;
+	private JSONObject kantin;
+	private JSONObject ruangan;
 
 	private static final int STATE_SHOW_BURGER = 1;
 	private static final int STATE_HIDE_BURGER = 0;
@@ -77,18 +83,11 @@ public class MainActivity extends AppCompatActivity
 
 		mNavigationDrawerFragment = (NavigationDrawerFragment)
 				getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
-		mTitle = getTitle();
 
-		try {
-			jsonArray = loadJSON(R.raw.data).getJSONArray("OSKM");
-		} catch (JSONException | IOException e) {
-			e.printStackTrace();
-		}
+		new JSONTask().execute();
 
 		// Set up the drawer.
-		mNavigationDrawerFragment.setUp(
-				R.id.navigation_drawer,
-				(DrawerLayout) findViewById(R.id.drawer_layout));
+		mNavigationDrawerFragment.setUp(R.id.navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout));
 		drawerToggle = mNavigationDrawerFragment.getDrawerToggle();
 
 		state = STATE_SHOW_BURGER;
@@ -96,17 +95,6 @@ public class MainActivity extends AppCompatActivity
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
-		JSONObject aboutOSKM = null;
-		JSONObject aboutOHU = null;
-		JSONObject aboutApp = null;
-		try {
-			aboutOSKM = jsonArray.getJSONObject(0);
-			aboutOHU = jsonArray.getJSONObject(1);
-			aboutApp = jsonArray.getJSONObject(2);
-		}
-		catch (Exception e) {
-
-		}
 
 		// update the main content by replacing fragments
 		state = STATE_SHOW_BURGER;
@@ -254,39 +242,34 @@ public class MainActivity extends AppCompatActivity
 	@Override
 	public void onMenuClicked(int code) {
 		state = STATE_HIDE_BURGER;
-		JSONArray array;
 		try {
 			switch (code) {
 				case 0:
-					onCardClicked(MENU_LIST, getJSONObject("kemahasiswaan"));
+					onCardClicked(MENU_LIST, kemahasiswaan);
 					break;
 				case 1:
-					array = getJSONObject("lembaga pusat").getJSONArray("isi");
-					onCardClicked(INFORMATION, array.getJSONObject(0));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(0));
 					break;
 				case 2:
-					array = getJSONObject("lembaga pusat").getJSONArray("isi");
-					onCardClicked(INFORMATION, array.getJSONObject(1));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(1));
 					break;
 				case 3:
-					onCardClicked(MENU_LIST, getJSONObject("Himpunan"));
+					onCardClicked(MENU_LIST, himpunan);
 					break;
 				case 4:
-					onCardClicked(MENU_LIST, getJSONObject("Unit"));
+					onCardClicked(MENU_LIST, unit);
 					break;
 				case 5:
-					array = getJSONObject("lembaga pusat").getJSONArray("isi");
-					onCardClicked(INFORMATION, array.getJSONObject(2));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(2));
 					break;
 				case 6:
-					array = getJSONObject("lembaga pusat").getJSONArray("isi");
-					onCardClicked(INFORMATION, array.getJSONObject(3));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(3));
 					break;
 				case 7:
-					onCardClicked(MENU_LIST, getJSONObject("Kantin"));
+					onCardClicked(MENU_LIST, kantin);
 					break;
 				case 8:
-					onCardClicked(MENU_LIST, getJSONObject("Ruang"));
+					onCardClicked(MENU_LIST, ruangan);
 					break;
 
 			}
@@ -438,6 +421,29 @@ public class MainActivity extends AppCompatActivity
 			toast.show();
 		}
 
+	}
+
+	private class JSONTask extends AsyncTask<Void, Void, Void> {
+		@Override
+		protected Void doInBackground(Void... params) {
+
+			try {
+				jsonArray = loadJSON(R.raw.data).getJSONArray("OSKM");
+				aboutOSKM = jsonArray.getJSONObject(0);
+				aboutOHU = jsonArray.getJSONObject(1);
+				aboutApp = jsonArray.getJSONObject(2);
+				kemahasiswaan = getJSONObject("kemahasiswaan");
+				lembagaPusat = getJSONObject("lembaga pusat").getJSONArray("isi");
+				himpunan = getJSONObject("Himpunan");
+				unit = getJSONObject("Unit");
+				kantin = getJSONObject("Kantin");
+				ruangan = getJSONObject("Ruang");
+			} catch (JSONException | IOException e) {
+				e.printStackTrace();
+			}
+
+			return null;
+		}
 	}
 
 }

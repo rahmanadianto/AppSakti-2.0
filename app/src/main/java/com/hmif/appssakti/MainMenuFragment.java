@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -109,13 +108,15 @@ public class MainMenuFragment extends Fragment {
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
 		MenuItem menuItem = menu.findItem(R.id.action_search);
-		SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context
-				.SEARCH_SERVICE);
+
+		SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
+
 		searchView = (SearchView) menu.findItem(R.id.action_search).getActionView();
+
 		// Assumes current activity is the searchable activity
-		searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity()
-				.getComponentName()));
+		searchView.setSearchableInfo(searchManager.getSearchableInfo(getActivity().getComponentName()));
 		searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
+
 		super.onCreateOptionsMenu(menu, inflater);
 	}
 }

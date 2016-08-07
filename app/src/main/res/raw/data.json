@@ -253,7 +253,7 @@
             },
             {
               "page_title": "Konsep Organisasi Internal KM-ITB",
-              "page_content": "5. <b>Representatif</b>, artinya sistem yang dipergunakan dalam mekanisme pengambilan keputusan dan tindakan badan kelengkapan organisasi betul-betul merupakan perwujudan atau representasi dari keinginan seluruh mahasiswa ditingkatnya masing-masing.<br/></b><br/>6. <b>Efektif dan efisien</b>, artinya struktur, mekanisme, dan fungsi berbagai elemen yang dibentuk dalam organisasi dapat berjalan secara efektif dan efisien.<br/>7. <b>Transparan</b>, artinya seluruh aspek dalam pengambilan keputusan dan kebijakan organisasi harus bersifat terbuka, dapat dipertanggungjawabkan, dan dapat diketahui dengan mudah oleh khalayak."
+              "page_content": "<br/>5. <b>Representatif</b>, artinya sistem yang dipergunakan dalam mekanisme pengambilan keputusan dan tindakan badan kelengkapan organisasi betul-betul merupakan perwujudan atau representasi dari keinginan seluruh mahasiswa ditingkatnya masing-masing.<br/></b>6. <b>Efektif dan efisien</b>, artinya struktur, mekanisme, dan fungsi berbagai elemen yang dibentuk dalam organisasi dapat berjalan secara efektif dan efisien.<br/>7. <b>Transparan</b>, artinya seluruh aspek dalam pengambilan keputusan dan kebijakan organisasi harus bersifat terbuka, dapat dipertanggungjawabkan, dan dapat diketahui dengan mudah oleh khalayak."
             }
           ]
         },
@@ -2385,7 +2385,6 @@
         {
           "nama": "Kantin East Corner",
           "foto": "img_east_corner",
-          "lokasi": "-",
           "subkantin": [
             {
               "nama": "Mie Ayam Kraton",
@@ -2472,7 +2471,6 @@
         {
           "nama": "Kantin Matahari",
           "foto": "img_kantin_matahari",
-          "lokasi": "-",
           "daftar_makanan": [
             "Nasi Daging Dendeng Sapi Ragi",
             "Nasi Udang",
@@ -2494,7 +2492,6 @@
         {
           "nama": "Kantin Ganesha 4072",
           "foto": "img_ganesha_4072",
-          "lokasi": "-",
           "daftar_makanan": [
             "Chicken Katsu",
             "Nasi Bakar",
@@ -2505,7 +2502,6 @@
         {
           "nama": "Kantin Saraga",
           "foto": "img_saraga",
-          "lokasi": "-",
           "daftar_makanan": [
             "Aneka Susu Murni",
             "Aneka Jus Buah",

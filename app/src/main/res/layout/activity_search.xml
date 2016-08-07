@@ -8,6 +8,16 @@
 
 	<include layout="@layout/toolbar_main_menu"/>
 
+	<TextView
+		android:id="@+id/no_result"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:textSize="20sp"
+		android:layout_marginTop="20dp"
+		android:layout_gravity="center"
+		android:textStyle="italic"
+		android:text="Kata kunci tidak ditemukan"/>
+
 	<ListView
 		android:id="@+id/search_result"
 		android:layout_width="match_parent"

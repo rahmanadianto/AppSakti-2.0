@@ -2,6 +2,7 @@ package com.hmif.appssakti;
 
 import android.app.Activity;
 import android.content.Context;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.res.ResourcesCompat;
@@ -34,6 +35,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 
 	private int layoutId;
 	private LinearLayout menuContainer;
+	private JSONArray array;
 
 	private int mFlexibleSpaceImageHeight;
 	private int mActionBarSize;
@@ -75,11 +77,9 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		View v = inflater.inflate(R.layout.fragment_list_icon, container, false);
 		setUpView(v);
 		menuContainer = (LinearLayout) v.findViewById(R.id.menu_container);
-		try {
-			createMenu(inflater, container);
-		} catch (JSONException e) {
-			e.printStackTrace();
-		}
+
+		new JSONTask().execute(inflater);
+
 		return v;
 	}
 
@@ -108,192 +108,6 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				updateFlexibleSpaceText(mScrollView.getCurrentScrollY());
 			}
 		});
-	}
-
-	private void createMenu(LayoutInflater inflater, ViewGroup parent) throws JSONException {
-		JSONArray array = null;
-
-		// Get Data
-		if(jsonObject.has("menu")){
-			array = jsonObject.getJSONArray("isi");
-		}
-		else if(jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")){
-			array = jsonObject.getJSONArray("info");
-		}
-		else if (jsonObject.has("gedung")) {
-			array = jsonObject.getJSONArray("ruangan");
-		}
-
-		// Set Header text and image
-		if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
-			mTitleView.setText("Unit");
-			mImageView.setImageResource(R.drawable.header_unit);
-		}
-		else if (jsonObject.has("kategori unit")) {
-			mTitleView.setText(jsonObject.getString("kategori unit"));
-			mImageView.setImageResource(
-					getResources().getIdentifier(
-							jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
-					)
-			);
-		}
-		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
-			mTitleView.setText("Himpunan");
-			mImageView.setImageResource(R.drawable.header_fakultas);
-		}
-		else if (jsonObject.has("nama fakultas")){
-			mTitleView.setText(jsonObject.getString("nama fakultas"));
-			mImageView.setImageResource(
-					getResources().getIdentifier(
-							jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
-					)
-			);
-		}
-		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
-			mTitleView.setText("Kemahasiswaan");
-			mImageView.setImageResource(R.drawable.home_kemahasiswaan);
-		}
-		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
-			mTitleView.setText("Kantin");
-			mImageView.setImageResource(R.drawable.hmif);
-		}
-		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
-			mTitleView.setText("Ruang Kuliah");
-			mImageView.setImageResource(R.drawable.hmif);
-		}
-		else if (jsonObject.has("gedung")) {
-			mTitleView.setText(jsonObject.getString("gedung"));
-			mImageView.setImageResource(R.drawable.hmif);
-		}
-
-		// Set content
-		int jumlah_content = 0;
-
-		try {
-			jumlah_content = array.length();
-		}
-		catch (NullPointerException ignored) {}
-
-		for (int i = 0; i < jumlah_content; i++){
-			View v = inflater.inflate(layoutId, menuContainer, false);
-
-			ImageView icon = (ImageView) v.findViewById(R.id.item_icon);
-			listImage.add(icon);
-			TextView textGeneral = (TextView) v.findViewById(R.id.item_text_general);
-			TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
-
-			final JSONObject obj = array.getJSONObject(i);
-			if (obj.has("header foto") && !obj.getString("header foto").equals("-")) {
-				icon.setImageDrawable(
-						ResourcesCompat.getDrawable(
-								getResources(),
-								getResources().getIdentifier(
-										obj.getString("header foto"),
-										"drawable",
-										getActivity().getApplicationContext().getPackageName()
-								),
-								null
-						)
-				);
-			}
-			else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
-				icon.setImageDrawable(
-						ResourcesCompat.getDrawable(
-								getResources(),
-								getResources().getIdentifier(
-										obj.getString("foto"),
-										"drawable",
-										getActivity().getApplicationContext().getPackageName()
-								),
-								null
-						)
-				);
-			}
-			else if (obj.has("ruangan") || obj.has("keterangan")) {
-				v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
-			}
-			else {
-				icon.setImageDrawable(
-						ResourcesCompat.getDrawable(getResources(), R.drawable.apps_header_logo, null));
-			}
-
-			if (obj.has("nama fakultas")){
-				textGeneral.setText(obj.getString("nama fakultas"));
-				textDetail.setText(obj.getString("nama panjang"));
-			}
-			else if (obj.has("nama himpunan")){
-				textGeneral.setText(obj.getString("nama himpunan"));
-				textDetail.setText(obj.getString("kepanjangan"));
-			}
-			else if (obj.has("kategori unit")){
-				textGeneral.setText(obj.getString("kategori unit"));
-				textDetail.setVisibility(View.GONE);
-			}
-			else if (obj.has("nama unit")){
-				textGeneral.setText(obj.getString("nama unit"));
-				if (obj.getString("kepanjangan").equals("-")){
-					textDetail.setVisibility(View.GONE);
-				}
-				else {
-					textDetail.setText(obj.getString("kepanjangan"));
-				}
-			}
-			else if (obj.has("judul")){
-				textGeneral.setText(obj.getString("judul"));
-				textDetail.setVisibility(View.GONE);
-			}
-			else if (obj.has("keterangan")) { // Ruangan
-				textGeneral.setText(obj.getString("nama"));
-				textDetail.setText(obj.getString("keterangan"));
-			}
-			else if (obj.has("nama")) { // kantin
-				textGeneral.setText(obj.getString("nama"));
-				textDetail.setVisibility(View.GONE);
-			}
-			else if (obj.has("ruangan")) {
-				textGeneral.setText(obj.getString("gedung"));
-				textDetail.setText(obj.getString("jumlah"));
-			}
-
-			// Set onClick Listener
-			if (obj.has("pages")) {
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.PAGES, obj);
-					}
-				});
-			}
-			else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas") || obj.has("ruangan")) {
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.MENU_LIST, obj);
-					}
-				});
-			}
-			else if (obj.has("judul")) {
-				v.setOnClickListener(new View.OnClickListener() {
-					@Override
-					public void onClick(View v) {
-						mListener.onCardClicked(MainActivity.PLAIN_INFORMATION, obj);
-					}
-				});
-			}
-			else {
-				// Set Listener jika bukan kantin
-				if (!obj.has("foto") && !obj.has("keterangan")) {
-					v.setOnClickListener(new View.OnClickListener() {
-						@Override
-						public void onClick(View v) {
-							mListener.onCardClicked(MainActivity.INFORMATION, obj);
-						}
-					});
-				}
-			}
-
-			menuContainer.addView(v);
-		}
 	}
 
 	public void updateFlexibleSpaceText(int scrollY) throws NullPointerException{
@@ -376,4 +190,186 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		listImage = null;
 	}
 
+	private class JSONTask extends AsyncTask<LayoutInflater, Void, LayoutInflater> {
+		@Override
+		protected LayoutInflater doInBackground(LayoutInflater... params) {
+
+			try {
+				// Get Data
+				if (jsonObject.has("menu")) {
+					array = jsonObject.getJSONArray("isi");
+				} else if (jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")) {
+					array = jsonObject.getJSONArray("info");
+				} else if (jsonObject.has("gedung")) {
+					array = jsonObject.getJSONArray("ruangan");
+				}
+			}
+			catch (Exception e) {
+
+			}
+
+			return params[0];
+		}
+
+		@Override
+		protected void onPostExecute(LayoutInflater inflater) {
+
+			try {
+				// Set Header text and image
+				if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
+					mTitleView.setText("Unit");
+					mImageView.setImageResource(R.drawable.header_unit);
+				}
+				else if (jsonObject.has("kategori unit")) {
+					mTitleView.setText(jsonObject.getString("kategori unit"));
+					mImageView.setImageResource(
+							getResources().getIdentifier(
+									jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
+							)
+					);
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
+					mTitleView.setText("Himpunan");
+					mImageView.setImageResource(R.drawable.header_fakultas);
+				}
+				else if (jsonObject.has("nama fakultas")){
+					mTitleView.setText(jsonObject.getString("nama fakultas"));
+					mImageView.setImageResource(
+							getResources().getIdentifier(
+									jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
+							)
+					);
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
+					mTitleView.setText("Kemahasiswaan");
+					mImageView.setImageResource(R.drawable.home_kemahasiswaan);
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
+					mTitleView.setText("Kantin");
+					mImageView.setImageResource(R.drawable.hmif);
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
+					mTitleView.setText("Ruang Kuliah");
+					mImageView.setImageResource(R.drawable.hmif);
+				}
+				else if (jsonObject.has("gedung")) {
+					mTitleView.setText(jsonObject.getString("gedung"));
+					mImageView.setImageResource(R.drawable.hmif);
+				}
+
+				// Set content
+				int jumlah_content = array.length();
+
+				for (int i = 0; i < jumlah_content; i++) {
+					View v = inflater.inflate(layoutId, menuContainer, false);
+
+					ImageView icon = (ImageView) v.findViewById(R.id.item_icon);
+					listImage.add(icon);
+					TextView textGeneral = (TextView) v.findViewById(R.id.item_text_general);
+					TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
+
+					final JSONObject obj = array.getJSONObject(i);
+					if (obj.has("header foto") && !obj.getString("header foto").equals("-")) {
+						icon.setImageDrawable(
+								ResourcesCompat.getDrawable(
+										getResources(),
+										getResources().getIdentifier(
+												obj.getString("header foto"),
+												"drawable",
+												getActivity().getApplicationContext().getPackageName()
+										),
+										null
+								)
+						);
+					} else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
+						icon.setImageDrawable(
+								ResourcesCompat.getDrawable(
+										getResources(),
+										getResources().getIdentifier(
+												obj.getString("foto"),
+												"drawable",
+												getActivity().getApplicationContext().getPackageName()
+										),
+										null
+								)
+						);
+					} else if (obj.has("ruangan") || obj.has("keterangan")) {
+						v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
+					} else {
+						icon.setImageDrawable(
+								ResourcesCompat.getDrawable(getResources(), R.drawable.apps_header_logo, null));
+					}
+
+					if (obj.has("nama fakultas")) {
+						textGeneral.setText(obj.getString("nama fakultas"));
+						textDetail.setText(obj.getString("nama panjang"));
+					} else if (obj.has("nama himpunan")) {
+						textGeneral.setText(obj.getString("nama himpunan"));
+						textDetail.setText(obj.getString("kepanjangan"));
+					} else if (obj.has("kategori unit")) {
+						textGeneral.setText(obj.getString("kategori unit"));
+						textDetail.setVisibility(View.GONE);
+					} else if (obj.has("nama unit")) {
+						textGeneral.setText(obj.getString("nama unit"));
+						if (obj.getString("kepanjangan").equals("-")) {
+							textDetail.setVisibility(View.GONE);
+						} else {
+							textDetail.setText(obj.getString("kepanjangan"));
+						}
+					} else if (obj.has("judul")) {
+						textGeneral.setText(obj.getString("judul"));
+						textDetail.setVisibility(View.GONE);
+					} else if (obj.has("keterangan")) { // Ruangan
+						textGeneral.setText(obj.getString("nama"));
+						textDetail.setText(obj.getString("keterangan"));
+					} else if (obj.has("foto")) { // kantin
+						textGeneral.setText(obj.getString("nama"));
+						textDetail.setVisibility(View.GONE);
+					} else if (obj.has("ruangan")) {
+						textGeneral.setText(obj.getString("gedung"));
+						textDetail.setText(obj.getString("jumlah"));
+					}
+
+					// Set onClick Listener
+					if (obj.has("pages")) {
+						v.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								mListener.onCardClicked(MainActivity.PAGES, obj);
+							}
+						});
+					} else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas") || obj.has("ruangan")) {
+						v.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								mListener.onCardClicked(MainActivity.MENU_LIST, obj);
+							}
+						});
+					} else if (obj.has("judul")) {
+						v.setOnClickListener(new View.OnClickListener() {
+							@Override
+							public void onClick(View v) {
+								mListener.onCardClicked(MainActivity.PLAIN_INFORMATION, obj);
+							}
+						});
+					} else {
+						// Exclude kantin dan list ruangan
+						if (!obj.has("foto") && !obj.has("keterangan")) {
+							v.setOnClickListener(new View.OnClickListener() {
+								@Override
+								public void onClick(View v) {
+									mListener.onCardClicked(MainActivity.INFORMATION, obj);
+								}
+							});
+						}
+					}
+
+					menuContainer.addView(v);
+				}
+			}
+			catch (Exception e) {
+
+			}
+		}
+	}
 }
