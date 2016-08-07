@@ -3,12 +3,10 @@ package com.hmif.intro;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.annotation.Nullable;
+import android.os.Bundle;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +20,7 @@ import com.hmif.custom.IntroPagerAdapter;
 public class IntroActivity extends ActionBarActivity implements ViewPager.OnPageChangeListener,
 		View.OnClickListener{
 
-	private final static String PREFERENCE_KEY = "bvhjwhgv";
+	private final static String PREFERENCE_KEY = "com.hmif.appsakti";
 	private final static String FIRST_TIME = "first_time";
 	private static final int NUM_PAGES = 3;
 	private ViewPager mPager;
@@ -36,16 +34,17 @@ public class IntroActivity extends ActionBarActivity implements ViewPager.OnPage
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intro);
 
-//		SharedPreferences preferences = getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
-//		if(!preferences.getBoolean(FIRST_TIME, true)){
-//			Intent intent = new Intent(this, MainActivity.class);
-//			startActivity(intent);
-//			finish();
-//		}else{
-//			SharedPreferences.Editor editor = preferences.edit();
-//			editor.putBoolean(FIRST_TIME, false);
-//			editor.commit();
-//		}
+		SharedPreferences preferences = getSharedPreferences(PREFERENCE_KEY, Context.MODE_PRIVATE);
+		if (!preferences.getBoolean(FIRST_TIME, true)){
+			Intent intent = new Intent(this, MainActivity.class);
+			startActivity(intent);
+			finish();
+		}
+		else{
+			SharedPreferences.Editor editor = preferences.edit();
+			editor.putBoolean(FIRST_TIME, false);
+			editor.apply();
+		}
 
 		btnLewati = (Button) findViewById(R.id.btn_lewati);
 		btnSelesai = (Button) findViewById(R.id.btn_selesai);
@@ -59,8 +58,12 @@ public class IntroActivity extends ActionBarActivity implements ViewPager.OnPage
 		mPager.setAdapter(mPagerAdapter);
 
 		mIndicator = (CirclePageIndicator) findViewById(R.id.circle_indicator);
-		mIndicator.setViewPager(mPager);
-		mIndicator.setOnPageChangeListener(this);
+		if (mIndicator != null) {
+			mIndicator.setViewPager(mPager);
+		}
+		if (mIndicator != null) {
+			mIndicator.setOnPageChangeListener(this);
+		}
 	}
 
 	@Override
