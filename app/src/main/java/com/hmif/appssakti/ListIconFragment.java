@@ -202,6 +202,10 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 					array = jsonObject.getJSONArray("info");
 				} else if (jsonObject.has("gedung")) {
 					array = jsonObject.getJSONArray("ruangan");
+				} else if (jsonObject.has("subkantin")) {
+					array = jsonObject.getJSONArray("subkantin");
+				} else if (jsonObject.has("daftar_makanan")) {
+					array = jsonObject.getJSONArray("daftar_makanan");
 				}
 			}
 			catch (Exception e) {
@@ -213,6 +217,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 
 		@Override
 		protected void onPostExecute(LayoutInflater inflater) {
+			super.onPostExecute(inflater);
 
 			try {
 				// Set Header text and image
@@ -247,6 +252,22 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
 					mTitleView.setText("Kantin");
 					mImageView.setImageResource(R.drawable.hmif);
+				}
+				else if (jsonObject.has("foto")){
+					mTitleView.setText(jsonObject.getString("nama"));
+					mImageView.setImageResource(
+							getResources().getIdentifier(
+									jsonObject.getString("foto"), "drawable", getActivity().getPackageName()
+							)
+					);
+				}
+				else if (jsonObject.has("daftar_makanan")){
+					mTitleView.setText(jsonObject.getString("nama"));
+					mImageView.setImageResource(
+							getResources().getIdentifier(
+									"apps_header_logo", "drawable", getActivity().getPackageName()
+							)
+					);
 				}
 				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
 					mTitleView.setText("Ruang Kuliah");
@@ -293,7 +314,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 										null
 								)
 						);
-					} else if (obj.has("ruangan") || obj.has("keterangan")) {
+					} else if (obj.has("keterangan")) {
 						v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
 					} else {
 						icon.setImageDrawable(
@@ -328,6 +349,9 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 					} else if (obj.has("ruangan")) {
 						textGeneral.setText(obj.getString("gedung"));
 						textDetail.setText(obj.getString("jumlah"));
+					} else if (obj.has("daftar_makanan")) {
+						textGeneral.setText(obj.getString("nama"));
+						textDetail.setVisibility(View.GONE);
 					}
 
 					// Set onClick Listener
@@ -338,7 +362,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 								mListener.onCardClicked(MainActivity.PAGES, obj);
 							}
 						});
-					} else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas") || obj.has("ruangan")) {
+					} else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")
+							|| obj.has("ruangan") || obj.has("subkantin") || obj.has("daftar_makanan")) {
 						v.setOnClickListener(new View.OnClickListener() {
 							@Override
 							public void onClick(View v) {
@@ -353,8 +378,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 							}
 						});
 					} else {
-						// Exclude kantin dan list ruangan
-						if (!obj.has("foto") && !obj.has("keterangan")) {
+						// list ruangan
+						if (!obj.has("keterangan")) {
 							v.setOnClickListener(new View.OnClickListener() {
 								@Override
 								public void onClick(View v) {

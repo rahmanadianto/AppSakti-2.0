@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -168,6 +169,13 @@ public class MainActivity extends AppCompatActivity
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, ListIconFragment.newInstance(R.layout
 								.text_icon_item, searchObj))
+						.addToBackStack(null)
+						.commit();
+			}
+			else if(searchType == PAGES){
+				fragmentManager.beginTransaction()
+						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+						.replace(R.id.container, SlideViewFragment.newInstance(searchObj))
 						.addToBackStack(null)
 						.commit();
 			}

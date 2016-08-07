@@ -61,10 +61,15 @@ public class IconTextAdapter extends BaseAdapter{
 		ImageView mImageView = (ImageView) v.findViewById(R.id.item_icon);
 
 		textGeneral.setText(itemsTextGeneral.get(position));
-		if(itemsIcon.get(position) != null)
-			mImageView.setImageResource(itemsIcon.get(position));
-		else
-			mImageView.setImageDrawable(null);
+		try {
+			if(itemsIcon.get(position) != null)
+				mImageView.setImageResource(itemsIcon.get(position));
+			else
+				mImageView.setImageDrawable(null);
+		}
+		catch (Exception e) {
+
+		}
 
 //		if(textDetail != null){
 //			if(itemsTextDetail != null){

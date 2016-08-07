@@ -2389,81 +2389,231 @@
             {
               "nama": "Mie Ayam Kraton",
               "daftar_makanan": [
-                "Mie Ayam Kraton Kuah",
-                "Bakso Kraton",
-                "Mie Ayam Kraton Kering",
-                "Mie Ayam Bakso Kraton",
-                "Tempe Mendoan",
-                "Ceker",
-                "Pangsit",
-                "Nasi Ayam Geprek",
-                "Paket Waisya",
-                "Paket Ksatria",
-                "Paket Brahmana",
-                "Nasi Pecel",
-                "Nasi Pecel Lele Gathotka"
+                {
+                  "nama": "Mie Ayam Kraton Kuah",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Bakso Kraton",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Mie Ayam Kraton Kering",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Mie Ayam Bakso Kraton",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Tempe Mendoan",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Ceker",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Pangsit",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Ayam Geprek",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Paket Waisya",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Paket Ksatria",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Paket Brahmana",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Pecel",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Pecel Lele Gathotka",
+                  "keterangan": ""
+                }
               ]
             },
             {
               "nama": "Sambalado Express",
               "daftar_makanan": [
-                "Nasi Goreng Padang Puash",
-                "Nasi Ayam Dendeng Puash",
-                "Nasi Ayam Puash",
-                "Nasi Dendeng Puash",
-                "Nasi Rendang"
+                {
+                  "nama": "Nasi Goreng Padang Puash",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Ayam Dendeng Puash",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Ayam Puash",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Dendeng Puash",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Rendang",
+                  "keterangan": ""
+                }
               ]
             },
             {
               "nama": "Ayamayaman!",
               "daftar_makanan": [
-                "Chicken Skkn Rice",
-                "Curry Katsu Rice",
-                "Ayam Kampus Manis",
-                "Ayam Kampus Saos Bangkok",
-                "Spinach Chicken Rice",
-                "Ayam Kampus Pedas",
-                "Nasi Goreng Tom Yum",
-                "Nasi Goreng Kulit",
-                "Ginger Katsu Rice"
+                {
+                  "nama": "Chicken Skkn Rice",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Curry Katsu Rice",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Ayam Kampus Manis",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Ayam Kampus Saos Bangkok",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Spinach Chicken Rice",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Ayam Kampus Pedas",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Tom Yum",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Kulit",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Ginger Katsu Rice",
+                  "keterangan": ""
+                }
               ]
             },
             {
               "nama": "Kedai BOBOKO",
               "daftar_makanan": [
-                "Paket Pahamu",
-                "Nasi Ayam Boboko",
-                "Nasi Goreng Kampung Spesia",
-                "Nasi Bistik Special",
-                "Nasi Goreng Bistik Special",
-                "Nasi Goreng Favourite Boboko",
-                "Nasi Goreng Cikur Special",
-                "Kol Goreng",
-                "Bakwan"
+                {
+                  "nama": "Paket Pahamu",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Ayam Boboko",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Kampung Spesia",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Bistik Special",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Bistik Special",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Favourite Boboko",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Goreng Cikur Special",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Kol Goreng",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Bakwan",
+                  "keterangan": ""
+                }
               ]
             },
             {
               "nama": "Dapur Mama Mimi",
               "daftar_makanan": [
-                "Nasi Soto Padang",
-                "Tekwan",
-                "Pempek",
-                "Lenggang",
-                "Nasi Gulai Ayam",
-                "Nasi Telor Sayur"
+                {
+                  "nama": "Nasi Soto Padang",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Tekwan",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Pempek",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Lenggang",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Gulai Ayam",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Nasi Telor Sayur",
+                  "keterangan": ""
+                }
               ]
             },
             {
               "nama": "Say Cheez",
               "daftar_makanan": [
-                "Tengkleng Ayam",
-                "Rawon Ayam",
-                "Mackerel Bolognese",
-                "Chicken Roll",
-                "Smoked Calamary",
-                "Boneless Wing",
-                "Tuna Mayo Rissole",
-                "Choco Ban Rissole"
+                {
+                  "nama": "Tengkleng Ayam",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Rawon Ayam",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Mackerel Bolognese",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Chicken Roll",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Smoked Calamary",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Boneless Wing",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Tuna Mayo Rissole",
+                  "keterangan": ""
+                },
+                {
+                  "nama": "Choco Ban Rissole",
+                  "keterangan": ""
+                }
               ]
             }
           ]
@@ -2472,56 +2622,170 @@
           "nama": "Kantin Matahari",
           "foto": "img_kantin_matahari",
           "daftar_makanan": [
-            "Nasi Daging Dendeng Sapi Ragi",
-            "Nasi Udang",
-            "Nasi Sate Ayam",
-            "Nasi Ayam Crispy",
-            "Nasi Tuna Special",
-            "Mie Goreng",
-            "Salad Buah",
-            "Salah Kentang",
-            "Spagetti",
-            "Macaroni",
-            "Nasi Pecel Telor",
-            "Nasi Tahu Telor Pedes",
-            "Nasi Bakar",
-            "Nasi Gulung Telor",
-            "Nasi Kuning"
+            {
+              "nama": "Nasi Daging Dendeng Sapi Ragi",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Udang",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Sate Ayam",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Ayam Crispy",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Tuna Special",
+              "keterangan": ""
+            },
+            {
+              "nama": "Mie Goreng",
+              "keterangan": ""
+            },
+            {
+              "nama": "Salad Buah",
+              "keterangan": ""
+            },
+            {
+              "nama": "Salah Kentang",
+              "keterangan": ""
+            },
+            {
+              "nama": "Spagetti",
+              "keterangan": ""
+            },
+            {
+              "nama": "Macaroni",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Pecel Telor",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Tahu Telor Pedes",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Bakar",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Gulung Telor",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Kuning",
+              "keterangan": ""
+            }
           ]
         },
         {
           "nama": "Kantin Ganesha 4072",
           "foto": "img_ganesha_4072",
           "daftar_makanan": [
-            "Chicken Katsu",
-            "Nasi Bakar",
-            "Rolade Beef",
-            "Corned Beef"
+            {
+              "nama": "Chicken Katsu",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Bakar",
+              "keterangan": ""
+            },
+            {
+              "nama": "Rolade Beef",
+              "keterangan": ""
+            },
+            {
+              "nama": "Corned Beef",
+              "keterangan": ""
+            }
           ]
         },
         {
           "nama": "Kantin Saraga",
           "foto": "img_saraga",
           "daftar_makanan": [
-            "Aneka Susu Murni",
-            "Aneka Jus Buah",
-            "Nasi Tongseng (Kambing, Ayam, Sapi)",
-            "Nasi Gulai (Sapi)",
-            "Nasi Goreng (Ayam, Mentega)",
-            "Nasi Sapi Lada Hitam",
-            "Nasi Putih Ayam Mentega",
-            "Nasi Ayam Suwir",
-            "Nasi Sop Iga",
-            "Kwetiaw siram",
-            "Mie Tek-Tek",
-            "Nasi Ikan Goreng Asam Manis",
-            "Nasi Seafood",
-            "Nasi Safo Tahu Seafood",
-            "Nasi Rawon",
-            "Nasi Ayam Plecing + Kentang Mustopa",
-            "Nasi Telor + Kentang Mustopa",
-            "Nasi Goreng Mawut",
-            "Nasi Ayam Goreng Serundeng"
+            {
+              "nama": "Aneka Susu Murni",
+              "keterangan": ""
+            },
+            {
+              "nama":  "Aneka Jus Buah",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Tongseng (Kambing, Ayam, Sapi)",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Gulai (Sapi)",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Goreng (Ayam, Mentega)",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Sapi Lada Hitam",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Putih Ayam Mentega",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Ayam Suwir",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Sop Iga",
+              "keterangan": ""
+            },
+            {
+              "nama": "Kwetiaw siram",
+              "keterangan": ""
+            },
+            {
+              "nama": "Mie Tek-Tek",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Ikan Goreng Asam Manis",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Seafood",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Safo Tahu Seafood",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Rawon",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Ayam Plecing + Kentang Mustopa",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Telor + Kentang Mustopa",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Goreng Mawut",
+              "keterangan": ""
+            },
+            {
+              "nama": "Nasi Ayam Goreng Serundeng",
+              "keterangan": ""
+            }
           ]
         }
       ]
