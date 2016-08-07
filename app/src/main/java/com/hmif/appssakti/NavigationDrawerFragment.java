@@ -101,14 +101,14 @@ public class NavigationDrawerFragment extends Fragment {
 		itemsText.add(getString(R.string.title_section2));
 		itemsText.add(getString(R.string.title_section3));
 		itemsText.add(getString(R.string.title_section4));
-		itemsText.add(getString(R.string.title_section5));
+		//itemsText.add(getString(R.string.title_section5));
 
 		List<Integer> itemsIcon = new ArrayList<>();
 		itemsIcon.add(R.drawable.icon_logo_white);
 		itemsIcon.add(R.drawable.icon_oskm_white);
 		itemsIcon.add(R.drawable.icon_ohu);
 		itemsIcon.add(R.drawable.icon_about);
-		itemsIcon.add(R.drawable.icon_team);
+		//itemsIcon.add(R.drawable.icon_team);
 
 		mDrawerListView.setAdapter(new IconTextAdapter(getActivity(), R.layout
 				.drawer_item, itemsText, null, itemsIcon));

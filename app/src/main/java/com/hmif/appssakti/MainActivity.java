@@ -13,6 +13,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity
 	public static final int MENU_LIST = 0;
 	public static final int INFORMATION = 1;
 	public static final int PLAIN_INFORMATION = 2;
+	public static final int PAGES = 3;
 	public static JSONObject searchObj;
 	public static int searchType;
 
@@ -77,23 +79,35 @@ public class MainActivity extends AppCompatActivity
 				getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
 		mTitle = getTitle();
 
+		try {
+			jsonArray = loadJSON(R.raw.data).getJSONArray("OSKM");
+		} catch (JSONException | IOException e) {
+			e.printStackTrace();
+		}
+
 		// Set up the drawer.
 		mNavigationDrawerFragment.setUp(
 				R.id.navigation_drawer,
 				(DrawerLayout) findViewById(R.id.drawer_layout));
 		drawerToggle = mNavigationDrawerFragment.getDrawerToggle();
 
-		try {
-			jsonArray = loadJSON(R.raw.oskm).getJSONArray("OSKM");
-		} catch (JSONException | IOException e) {
-			e.printStackTrace();
-		}
-
 		state = STATE_SHOW_BURGER;
 	}
 
 	@Override
 	public void onNavigationDrawerItemSelected(int position) {
+		JSONObject aboutOSKM = null;
+		JSONObject aboutOHU = null;
+		JSONObject aboutApp = null;
+		try {
+			aboutOSKM = jsonArray.getJSONObject(0);
+			aboutOHU = jsonArray.getJSONObject(1);
+			aboutApp = jsonArray.getJSONObject(2);
+		}
+		catch (Exception e) {
+
+		}
+
 		// update the main content by replacing fragments
 		state = STATE_SHOW_BURGER;
 		FragmentManager fragmentManager = getSupportFragmentManager();
@@ -108,31 +122,28 @@ public class MainActivity extends AppCompatActivity
 			//OSKM ITB
 			case 1 :
 				fragmentManager.beginTransaction()
-					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-							.layout.fragment_about_oskm))
+					.replace(R.id.container, SlideViewFragment.newInstance(aboutOSKM), "oskm")
 					.commit();
 				 break;
 			//Open House Unit
 			case 2:
 				fragmentManager.beginTransaction()
-					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-							.layout.fragment_ohu))
+					.replace(R.id.container, SlideViewFragment.newInstance(aboutOHU), "ohu")
 					.commit();
 				break;
 			//About
 			case 3:
 				fragmentManager.beginTransaction()
-					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-							.layout.fragment_about_apps))
+					.replace(R.id.container, SlideViewFragment.newInstance(aboutApp), "app")
 					.commit();
 				 break;
 			//Team
-			case 4:
+			/*case 4:
 				fragmentManager.beginTransaction()
 					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
 							.layout.fragment_team))
 					.commit();
-				break;
+				break; */
 
 		}
 	}
@@ -225,10 +236,16 @@ public class MainActivity extends AppCompatActivity
 	}
 
 	public JSONObject getJSONObject(String selection) throws JSONException {
-		for (int i = 0; i < jsonArray.length(); i++){
-			JSONObject obj = jsonArray.getJSONObject(i);
-			if (obj.getString("menu").equals(selection))
-				return obj;
+
+		try {
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject obj = jsonArray.getJSONObject(i);
+				if (obj.getString("menu").equals(selection))
+					return obj;
+			}
+		}
+		catch (Exception e) {
+			return null;
 		}
 
 		return null;
@@ -273,7 +290,8 @@ public class MainActivity extends AppCompatActivity
 					break;
 
 			}
-		}catch (JSONException e) {
+		}
+		catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}
@@ -309,6 +327,15 @@ public class MainActivity extends AppCompatActivity
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, PlainInformationFragment.newInstance(obj))
+						.addToBackStack(null)
+						.commit();
+				break;
+
+			//Munculkan informasi dalam pages
+			case PAGES:
+				fragmentManager.beginTransaction()
+						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
+						.replace(R.id.container, SlideViewFragment.newInstance(obj))
 						.addToBackStack(null)
 						.commit();
 				break;

@@ -245,7 +245,15 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 			}
 
 			// Set onClick Listener
-			if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")) {
+			if (obj.has("pages")) {
+				v.setOnClickListener(new View.OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						mListener.onCardClicked(MainActivity.PAGES, obj);
+					}
+				});
+			}
+			else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")) {
 				v.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -262,8 +270,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				});
 			}
 			else {
-				// Set Listener jika bukan kantin, hanya kantin yang memiliki elemen "foto"
-				if (!obj.has("foto")) {
+				// Set Listener jika bukan kantin dan ruangan
+				if (!obj.has("foto") && !obj.has("ruangan")) {
 					v.setOnClickListener(new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {
