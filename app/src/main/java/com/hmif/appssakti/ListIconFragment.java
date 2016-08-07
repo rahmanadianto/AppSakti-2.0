@@ -120,6 +120,9 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		else if(jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")){
 			array = jsonObject.getJSONArray("info");
 		}
+		else if (jsonObject.has("gedung")) {
+			array = jsonObject.getJSONArray("ruangan");
+		}
 
 		// Set Header text and image
 		if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
@@ -156,6 +159,10 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 		}
 		else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
 			mTitleView.setText("Ruang Kuliah");
+			mImageView.setImageResource(R.drawable.hmif);
+		}
+		else if (jsonObject.has("gedung")) {
+			mTitleView.setText(jsonObject.getString("gedung"));
 			mImageView.setImageResource(R.drawable.hmif);
 		}
 
@@ -202,7 +209,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 						)
 				);
 			}
-			else if (obj.has("ruangan")) {
+			else if (obj.has("ruangan") || obj.has("keterangan")) {
 				v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
 			}
 			else {
@@ -235,13 +242,17 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				textGeneral.setText(obj.getString("judul"));
 				textDetail.setVisibility(View.GONE);
 			}
+			else if (obj.has("keterangan")) { // Ruangan
+				textGeneral.setText(obj.getString("nama"));
+				textDetail.setText(obj.getString("keterangan"));
+			}
 			else if (obj.has("nama")) { // kantin
 				textGeneral.setText(obj.getString("nama"));
 				textDetail.setVisibility(View.GONE);
 			}
 			else if (obj.has("ruangan")) {
-				textGeneral.setText(obj.getString("ruangan"));
-				textDetail.setText(obj.getString("gedung"));
+				textGeneral.setText(obj.getString("gedung"));
+				textDetail.setText(obj.getString("jumlah"));
 			}
 
 			// Set onClick Listener
@@ -253,7 +264,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 					}
 				});
 			}
-			else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")) {
+			else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas") || obj.has("ruangan")) {
 				v.setOnClickListener(new View.OnClickListener() {
 					@Override
 					public void onClick(View v) {
@@ -270,8 +281,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				});
 			}
 			else {
-				// Set Listener jika bukan kantin dan ruangan
-				if (!obj.has("foto") && !obj.has("ruangan")) {
+				// Set Listener jika bukan kantin
+				if (!obj.has("foto") && !obj.has("keterangan")) {
 					v.setOnClickListener(new View.OnClickListener() {
 						@Override
 						public void onClick(View v) {

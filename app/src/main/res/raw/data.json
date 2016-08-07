@@ -157,7 +157,7 @@
             },
             {
               "page_title": "Sejarah",
-              "page_content": "<b>2001 (2)<b><br/>Kongres 2001-2002 yang dipimpin Deddy Suryadi (PL’97) mengadakan Pemilihan Umum Anggota MWA Wakil Mahasiswa sebagai konsekuensi perubahan status ITB dari PTN menjadi PT-BHMN. Rian Ramadian Nugraha (IF’97) terpilih sebagai Wakil Mahasiswa di MWA. Pemilu Raya Oktober 2001 menghasilkan Akbar Hanif Dawam Abdullah (PN’98) sebagai Presiden Kabinet dan Pemilu ini tercatat sebagai Pemilu dengan kandidat terbanyak. Kabinet Dawam menjabat hanya selama 6 bulan dan menjalankan proses transisi serta konsolidasi KM ITB. Selain itu, pada bulan Desember 2001, BEM Bandung Raya dideklarasikan di Aula Barat ITB."
+              "page_content": "<b>2001 (2)</b><br/>Kongres 2001-2002 yang dipimpin Deddy Suryadi (PL’97) mengadakan Pemilihan Umum Anggota MWA Wakil Mahasiswa sebagai konsekuensi perubahan status ITB dari PTN menjadi PT-BHMN. Rian Ramadian Nugraha (IF’97) terpilih sebagai Wakil Mahasiswa di MWA. Pemilu Raya Oktober 2001 menghasilkan Akbar Hanif Dawam Abdullah (PN’98) sebagai Presiden Kabinet dan Pemilu ini tercatat sebagai Pemilu dengan kandidat terbanyak. Kabinet Dawam menjabat hanya selama 6 bulan dan menjalankan proses transisi serta konsolidasi KM ITB. Selain itu, pada bulan Desember 2001, BEM Bandung Raya dideklarasikan di Aula Barat ITB."
             },
             {
               "page_title": "Sejarah",
@@ -2535,6 +2535,7 @@
       "isi": [
         {
           "gedung": "LFM",
+          "jumlah": "1 ruangan",
           "ruangan": [
             {
               "nama": "9009",
@@ -2544,6 +2545,7 @@
         },
         {
           "gedung": "Labtek VIII",
+          "jumlah": "2 ruangan",
           "ruangan": [
             {
               "nama": "9011",
@@ -2557,6 +2559,7 @@
         },
         {
           "gedung": "Labtek VII",
+          "jumlah": "3 ruangan",
           "ruangan": [
             {
               "nama": "9012",
@@ -2574,6 +2577,7 @@
         },
         {
           "gedung": "Oktagon",
+          "jumlah": "9 ruangan",
           "ruangan": [
             {
               "nama": "9016",
@@ -2615,6 +2619,7 @@
         },
         {
           "gedung": "TVST",
+          "jumlah": "3 ruangan",
           "ruangan": [
             {
               "nama": "9022",
@@ -2632,6 +2637,7 @@
         },
         {
           "gedung": "GKU Barat",
+          "jumlah": "22 ruangan",
           "ruangan": [
             {
               "nama": "9103",
@@ -2725,6 +2731,7 @@
         },
         {
           "gedung": "GKU Timur",
+          "jumlah": "11 ruangan",
           "ruangan": [
             {
               "nama": "9212",
@@ -2774,6 +2781,7 @@
         },
         {
           "gedung": "Labtek V",
+          "jumlah": "6 ruangan",
           "ruangan": [
             {
               "nama": "9301",
@@ -2802,7 +2810,8 @@
           ]
         },
         {
-          "gedung": "VI",
+          "gedung": "Labtek VI",
+          "jumlah": "7 ruangan",
           "ruangan": [
             {
               "nama": "9307",
@@ -2836,6 +2845,7 @@
         },
         {
           "gedung": "Labtek I",
+          "jumlah": "5 ruangan",
           "ruangan": [
             {
               "nama": "9401",
@@ -2861,6 +2871,7 @@
         },
         {
           "gedung": "Basic Science A",
+          "jumlah": "1 ruangan",
           "ruangan": [
             {
               "nama": "BSC-A",
