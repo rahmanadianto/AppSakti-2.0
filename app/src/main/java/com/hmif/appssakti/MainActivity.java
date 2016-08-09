@@ -17,14 +17,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
-
+import com.backendless.Backendless;
 import com.hmif.custom.MainMenuListener;
 import com.hmif.custom.OnCardClickListener;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -36,12 +34,9 @@ public class MainActivity extends AppCompatActivity
 
 	public static final int MENU_LIST = 0;
 	public static final int INFORMATION = 1;
-	public static final int PLAIN_INFORMATION = 2;
-	public static final int PAGES = 3;
+	public static final int PAGES = 2;
 	public static JSONObject searchObj;
 	public static int searchType;
-
-	//
 
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -92,6 +87,9 @@ public class MainActivity extends AppCompatActivity
 		drawerToggle = mNavigationDrawerFragment.getDrawerToggle();
 
 		state = STATE_SHOW_BURGER;
+
+		// Init Backendless
+		Backendless.initApp(this, "A73CAAF6-16BC-99FD-FFDB-36CE5C026900", "44DC6EF3-C14F-FE74-FFAB-5848B45CC900", "v1");
 	}
 
 	@Override
@@ -126,13 +124,6 @@ public class MainActivity extends AppCompatActivity
 					.replace(R.id.container, SlideViewFragment.newInstance(aboutApp), "app")
 					.commit();
 				 break;
-			//Team
-			/*case 4:
-				fragmentManager.beginTransaction()
-					.replace(R.id.container, HardCodedInformationFragment.newInstance(R
-							.layout.fragment_team))
-					.commit();
-				break; */
 
 		}
 	}
@@ -150,14 +141,7 @@ public class MainActivity extends AppCompatActivity
 		FragmentManager fragmentManager = getSupportFragmentManager();
 
 		if(searchObj != null){
-			if(searchType == PLAIN_INFORMATION){
-				fragmentManager.beginTransaction()
-						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-						.replace(R.id.container, PlainInformationFragment.newInstance(searchObj))
-						.addToBackStack(null)
-						.commit();
-			}
-			else if(searchType == INFORMATION){
+			if(searchType == INFORMATION){
 				fragmentManager.beginTransaction()
 						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
 						.replace(R.id.container, LembagaInformationFragment.newInstance(searchObj))
@@ -217,34 +201,6 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		return super.onOptionsItemSelected(item);
-	}
-
-	private JSONObject loadJSON(int resId) throws IOException, JSONException {
-		String line;
-		StringBuilder result = new StringBuilder();
-
-		BufferedReader reader = new BufferedReader(new InputStreamReader(getResources()
-				.openRawResource(resId)));
-		while((line = reader.readLine()) != null){
-			result.append(line);
-		}
-		return new JSONObject(result.toString());
-	}
-
-	public JSONObject getJSONObject(String selection) throws JSONException {
-
-		try {
-			for (int i = 0; i < jsonArray.length(); i++) {
-				JSONObject obj = jsonArray.getJSONObject(i);
-				if (obj.getString("menu").equals(selection))
-					return obj;
-			}
-		}
-		catch (Exception e) {
-			return null;
-		}
-
-		return null;
 	}
 
 	@Override
@@ -311,15 +267,6 @@ public class MainActivity extends AppCompatActivity
 						.addToBackStack(null)
 						.commit();
 				setSocmedIntent(obj);
-				break;
-
-			//Munculkan informasi tanpa tulisan di header
-			case PLAIN_INFORMATION:
-				fragmentManager.beginTransaction()
-						.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE)
-						.replace(R.id.container, PlainInformationFragment.newInstance(obj))
-						.addToBackStack(null)
-						.commit();
 				break;
 
 			//Munculkan informasi dalam pages
@@ -452,6 +399,36 @@ public class MainActivity extends AppCompatActivity
 
 			return null;
 		}
+	}
+
+	private JSONObject loadJSON(int resId) throws IOException, JSONException {
+		String line;
+		StringBuilder result = new StringBuilder();
+
+		BufferedReader reader = new BufferedReader(new InputStreamReader(getResources()
+				.openRawResource(resId)));
+		while((line = reader.readLine()) != null){
+			result.append(line);
+		}
+		return new JSONObject(result.toString());
+	}
+
+	public JSONObject getJSONObject(String selection) throws JSONException {
+
+		try {
+			for (int i = 0; i < jsonArray.length(); i++) {
+				JSONObject obj = jsonArray.getJSONObject(i);
+
+				if (obj.getString("menu").equals(selection)) {
+					return obj;
+				}
+			}
+		}
+		catch (Exception e) {
+			return null;
+		}
+
+		return null;
 	}
 
 }

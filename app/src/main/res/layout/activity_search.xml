@@ -18,15 +18,6 @@
 		android:textStyle="italic"
 		android:text="Kata kunci tidak ditemukan"/>
 
-	<ProgressBar
-		android:layout_marginTop="50dp"
-		android:id="@+id/progressBar"
-		style="?android:attr/progressBarStyleSmall"
-		android:progressDrawable="@drawable/circular_progress_bar"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_gravity="center" />
-
 	<ListView
 		android:id="@+id/search_result"
 		android:layout_width="match_parent"

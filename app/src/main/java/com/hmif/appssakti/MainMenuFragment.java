@@ -10,10 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.hmif.custom.MainMenuListener;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class MainMenuFragment extends Fragment {
 	private MainMenuListener mListener;
 	private static String CATEGORY = "menu";
 	private int[] viewId;
+	private int[] imageId;
 	private SearchView searchView;
 
 	public MainMenuFragment(){}
@@ -41,25 +43,36 @@ public class MainMenuFragment extends Fragment {
 		fragment.mainMenuItem = mainMenuItem;
 		fragment.context = context;
 		fragment.viewId = new int[9];
+		fragment.imageId = new int[9];
+
 		//Kemahasiswaan
 		fragment.viewId[0] = R.id.card1;
+		fragment.imageId[0] = R.id.menu_image;
 		//Kongres
 		fragment.viewId[1] = R.id.card2;
+		fragment.imageId[1] = R.id.menu_image2;
 		//Kabinet
 		fragment.viewId[2] = R.id.card3;
+		fragment.imageId[2] = R.id.menu_image3;
 		//Himpunan
 		fragment.viewId[3] = R.id.card4;
+		fragment.imageId[3] = R.id.menu_image4;
 		//Unit
 		fragment.viewId[4] = R.id.card5;
+		fragment.imageId[4] = R.id.menu_image5;
 		//MWA-WM
 		fragment.viewId[5] = R.id.card6;
+		fragment.imageId[5] = R.id.menu_image6;
 		//Team Beasiswa
 		fragment.viewId[6] = R.id.card7;
+		fragment.imageId[6] = R.id.menu_image7;
 
 		//Kantin
 		fragment.viewId[7] = R.id.card8;
+		fragment.imageId[7] = R.id.menu_image8;
 		//Ruang
 		fragment.viewId[8] = R.id.card9;
+		fragment.imageId[8] = R.id.menu_image9;
 
 		return fragment;
 	}
@@ -81,6 +94,10 @@ public class MainMenuFragment extends Fragment {
 
 		for(int i = 0; i < 9; i++){
 			View card = v.findViewById(viewId[i]);
+			ImageView imageView = (ImageView) v.findViewById(imageId[i]);
+
+			loadImage(imageView, i);
+
 			final int itemId = i;
 			card.setOnClickListener(new View.OnClickListener() {
 				@Override
@@ -107,7 +124,6 @@ public class MainMenuFragment extends Fragment {
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 		inflater.inflate(R.menu.main, menu);
-		MenuItem menuItem = menu.findItem(R.id.action_search);
 
 		SearchManager searchManager = (SearchManager) getActivity().getSystemService(Context.SEARCH_SERVICE);
 
@@ -118,5 +134,27 @@ public class MainMenuFragment extends Fragment {
 		searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
 		super.onCreateOptionsMenu(menu, inflater);
+	}
+
+	private void loadImage(ImageView dest, int image_id) {
+
+		String[] urls = new String[] {
+				"home_kemahasiswaan",
+				"home_kongres",
+				"home_kabinet",
+				"home_hmj",
+				"home_unit",
+				"home_mwa_wm",
+				"home_beasiswa",
+				"hmif",
+				"hmif"
+		};
+
+		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
+
+		Glide.with(getContext())
+				.load(baseURL + urls[image_id] + ".png")
+				.into(dest);
+
 	}
 }

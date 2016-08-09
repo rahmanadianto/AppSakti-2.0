@@ -6,11 +6,11 @@
 			 tools:context="com.hmif.appssakti.ListIconFragment">
 
 	<ImageView
+		android:background="@color/hmif_color"
 		android:id="@+id/card_header_image"
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/flexible_space_height"
-		android:scaleType="centerCrop"
-		android:src="@drawable/apps_header_logo"/>
+		android:scaleType="centerCrop"/>
 
 	<com.github.ksoichiro.android.observablescrollview.ObservableScrollView
 		android:id="@+id/scroll_view"

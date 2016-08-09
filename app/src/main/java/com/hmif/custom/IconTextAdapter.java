@@ -9,6 +9,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hmif.appssakti.R;
 
 import java.util.List;
@@ -19,15 +20,17 @@ import java.util.List;
 public class IconTextAdapter extends BaseAdapter{
 
 	private List<String> itemsTextGeneral;
-	private List<String> itemsTextDetail;
-	private List<Integer> itemsIcon;
+//	private List<String> itemsTextDetail;
+	private List<String> itemsIcon;
+	private Boolean network;
 	private Context context;
 	private int layoutId;
 
 	public IconTextAdapter(Context context, int layoutId, List<String> itemsTextGeneral,
-						   @Nullable List<String> itemsTextDetail, List<Integer> itemsIcon){
+						   @Nullable List<String> itemsTextDetail, List<String> itemsIcon, Boolean network){
 		this.itemsTextGeneral = itemsTextGeneral;
-		this.itemsTextDetail = itemsTextDetail;
+//		this.itemsTextDetail = itemsTextDetail;
+		this.network = network;
 		this.itemsIcon = itemsIcon;
 		this.layoutId = layoutId;
 		this.context = context;
@@ -57,13 +60,13 @@ public class IconTextAdapter extends BaseAdapter{
 		}
 
 		TextView textGeneral = (TextView) v.findViewById(R.id.item_text_general);
-		TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
+//		TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
 		ImageView mImageView = (ImageView) v.findViewById(R.id.item_icon);
 
 		textGeneral.setText(itemsTextGeneral.get(position));
 		try {
 			if(itemsIcon.get(position) != null)
-				mImageView.setImageResource(itemsIcon.get(position));
+				loadImage(mImageView, itemsIcon.get(position));
 			else
 				mImageView.setImageDrawable(null);
 		}
@@ -80,5 +83,22 @@ public class IconTextAdapter extends BaseAdapter{
 //		}
 
 		return v;
+	}
+
+	private void loadImage(ImageView dest, String uri) {
+
+		if (network == true) {
+			String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
+
+			Glide.with(context)
+					.load(baseURL + uri + ".png")
+					.into(dest);
+		}
+		else {
+			Glide.with(context)
+					.load(context.getResources().getIdentifier(uri, "drawable", context.getPackageName()))
+					.into(dest);
+		}
+
 	}
 }

@@ -11,7 +11,7 @@
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/flexible_space_height"
 		android:scaleType="centerCrop"
-		android:src="@drawable/apps_header_logo"/>
+		android:background="@color/hmif_color"/>
 
 	<com.github.ksoichiro.android.observablescrollview.ObservableScrollView
 		android:id="@+id/scroll_view"

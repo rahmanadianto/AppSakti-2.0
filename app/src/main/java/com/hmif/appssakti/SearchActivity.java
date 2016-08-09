@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.hmif.custom.IconTextAdapter;
@@ -35,10 +34,9 @@ public class SearchActivity extends AppCompatActivity {
 	private JSONArray jsonArray;
 	private ListView resultList;
 	private TextView noResult;
-	private ProgressBar spinner;
 	private List<String> titles;
 	private List<JSONObject> data;
-	private List<Integer> icons;
+	private List<String> icons;
 	private List<Integer> dataType;
 
 	@Override
@@ -47,14 +45,12 @@ public class SearchActivity extends AppCompatActivity {
 		setContentView(R.layout.activity_search);
 
 		resultList = (ListView) findViewById(R.id.search_result);
-		spinner = (ProgressBar) findViewById(R.id.progressBar);
 		noResult = (TextView) findViewById(R.id.no_result);
 		toolbar = (Toolbar) findViewById(R.id.toolbar);
 		toolbar.setBackgroundColor(getResources().getColor(R.color.hmif_color));
 		setSupportActionBar(toolbar);
 		setTitle(null);
 
-		spinner.setVisibility(View.VISIBLE);
 		noResult.setVisibility(View.GONE);
 		resultList.setVisibility(View.GONE);
 
@@ -89,11 +85,6 @@ public class SearchActivity extends AppCompatActivity {
 					titles.add(obj.getString("nama"));
 					shouldAddData = true;
 				}
-				else if(obj.has("judul")){
-					dataType.add(MainActivity.PLAIN_INFORMATION);
-					titles.add(obj.getString("judul"));
-					shouldAddData = true;
-				}
 				else if(obj.has("nama lembaga")){
 					dataType.add(MainActivity.INFORMATION);
 					titles.add(obj.getString("nama lembaga"));
@@ -124,20 +115,16 @@ public class SearchActivity extends AppCompatActivity {
 					data.add(obj);
 
 					if(obj.has("logo") && !obj.getString("logo").equals("-")){
-						icons.add(getResources().getIdentifier(obj.getString("logo"),
-								"drawable", getPackageName()));
+						icons.add(obj.getString("logo"));
 					}
 					else if(obj.has("header foto") && !obj.getString("header foto").equals("-")){
-						icons.add(getResources().getIdentifier(obj.getString("header foto"), "drawable",
-								getPackageName()));
+						icons.add(obj.getString("header foto"));
 					}
 					else if(obj.has("foto") && !obj.getString("foto").equals("-")){
-						icons.add(getResources().getIdentifier(obj.getString("foto"), "drawable",
-								getPackageName()));
+						icons.add(obj.getString("foto"));
 					}
 					else {
-						icons.add(getResources().getIdentifier("apps_header_logo", "drawable",
-								getPackageName()));
+						icons.add("apps_header_logo");
 					}
 				}
 
@@ -281,14 +268,12 @@ public class SearchActivity extends AppCompatActivity {
 		protected void onPostExecute(Void aVoid) {
 			super.onPostExecute(aVoid);
 
-			spinner.setVisibility(View.GONE);
-
 			if (data.size() > 0) {
 				noResult.setVisibility(View.GONE);
 				resultList.setVisibility(View.VISIBLE);
 
-				IconTextAdapter adapter = new IconTextAdapter(getApplicationContext(), R.layout.text_icon_item2,
-						titles, null, icons);
+				IconTextAdapter adapter = new IconTextAdapter(getApplicationContext(), R.layout.text_icon_item_search,
+						titles, null, icons, true);
 
 				resultList.setAdapter(adapter);
 				resultList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -304,7 +289,6 @@ public class SearchActivity extends AppCompatActivity {
 				noResult.setVisibility(View.VISIBLE);
 			}
 
-			Log.d("Result", "" + data.size() + " " + dataType.size() + " " + icons.size());
 		}
 	}
 }

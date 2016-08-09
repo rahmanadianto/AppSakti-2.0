@@ -31,11 +31,11 @@
 				android:layout_height="match_parent">
 
 				<ImageView
+					android:background="#4CAF50"
 					android:id="@+id/menu_image"
 					android:layout_width="match_parent"
 					android:layout_height="match_parent"
-					android:scaleType="centerCrop"
-					android:src="@drawable/home_kemahasiswaan"/>
+					android:scaleType="centerCrop"/>
 
 				<View
 					android:layout_width="match_parent"
@@ -90,11 +90,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#4DD0E1"
 							android:id="@+id/menu_image2"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_kongres"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -132,11 +132,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#FFC107"
 							android:id="@+id/menu_image3"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_kabinet"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -186,11 +186,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#FF5722"
 							android:id="@+id/menu_image4"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_hmj"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -228,11 +228,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#3F51B5"
 							android:id="@+id/menu_image5"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_unit"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -282,11 +282,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#26A69A"
 							android:id="@+id/menu_image6"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_mwa_wm"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -324,11 +324,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#D81B60"
 							android:id="@+id/menu_image7"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/home_beasiswa"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -378,11 +378,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#FDD835"
 							android:id="@+id/menu_image8"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/hmif"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"
@@ -420,11 +420,11 @@
 						android:layout_height="match_parent">
 
 						<ImageView
+							android:background="#FDD835"
 							android:id="@+id/menu_image9"
 							android:layout_width="match_parent"
 							android:layout_height="match_parent"
-							android:scaleType="centerCrop"
-							android:src="@drawable/hmif"/>
+							android:scaleType="centerCrop"/>
 
 						<View
 							android:layout_width="match_parent"

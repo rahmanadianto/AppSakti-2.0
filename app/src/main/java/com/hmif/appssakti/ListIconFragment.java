@@ -1,11 +1,9 @@
 package com.hmif.appssakti;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -17,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
@@ -25,7 +24,6 @@ import com.hmif.custom.OnCardClickListener;
 import com.nineoldandroids.view.ViewHelper;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -36,13 +34,14 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 	private int layoutId;
 	private LinearLayout menuContainer;
 	private JSONArray array;
-
 	private int mFlexibleSpaceImageHeight;
 	private int mActionBarSize;
 	private ImageView mImageView;
+	private String imgUri;
 	private View mOverlayView;
 	private Toolbar toolbar;
 	private TextView mTitleView;
+	private String title;
 	private ObservableScrollView mScrollView;
 	private JSONObject jsonObject;
 	private OnCardClickListener mListener;
@@ -198,14 +197,60 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				// Get Data
 				if (jsonObject.has("menu")) {
 					array = jsonObject.getJSONArray("isi");
-				} else if (jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")) {
+				}
+				else if (jsonObject.has("nama fakultas") || jsonObject.has("kategori unit")) {
 					array = jsonObject.getJSONArray("info");
-				} else if (jsonObject.has("gedung")) {
+				}
+				else if (jsonObject.has("gedung")) {
 					array = jsonObject.getJSONArray("ruangan");
-				} else if (jsonObject.has("subkantin")) {
+				}
+				else if (jsonObject.has("subkantin")) {
 					array = jsonObject.getJSONArray("subkantin");
-				} else if (jsonObject.has("daftar_makanan")) {
+				}
+				else if (jsonObject.has("daftar_makanan")) {
 					array = jsonObject.getJSONArray("daftar_makanan");
+				}
+
+				// Set Header text and image
+				if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
+					title = "Unit";
+					imgUri = "header_unit";
+				}
+				else if (jsonObject.has("kategori unit")) {
+					title = jsonObject.getString("kategori unit");
+					imgUri = jsonObject.getString("header foto");
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
+					title = "Himpunan";
+					imgUri = "header_falultas";
+				}
+				else if (jsonObject.has("nama fakultas")){
+					title = jsonObject.getString("nama fakultas");
+					imgUri = jsonObject.getString("header foto");
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
+					title = "Kemahasiswaan";
+					imgUri = "home_kemahasiswaan";
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
+					title = "Kantin";
+					imgUri = "hmif";
+				}
+				else if (jsonObject.has("foto")){
+					title = jsonObject.getString("nama");
+					imgUri = jsonObject.getString("foto");
+				}
+				else if (jsonObject.has("daftar_makanan")){
+					title = jsonObject.getString("nama");
+					imgUri = "apps_header_logo";
+				}
+				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
+					title = "Ruang Kuliah";
+					imgUri = "hmif";
+				}
+				else if (jsonObject.has("gedung")) {
+					title = jsonObject.getString("gedung");
+					imgUri = "hmif";
 				}
 			}
 			catch (Exception e) {
@@ -220,63 +265,9 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 			super.onPostExecute(inflater);
 
 			try {
-				// Set Header text and image
-				if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Unit")) {
-					mTitleView.setText("Unit");
-					mImageView.setImageResource(R.drawable.header_unit);
-				}
-				else if (jsonObject.has("kategori unit")) {
-					mTitleView.setText(jsonObject.getString("kategori unit"));
-					mImageView.setImageResource(
-							getResources().getIdentifier(
-									jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
-							)
-					);
-				}
-				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
-					mTitleView.setText("Himpunan");
-					mImageView.setImageResource(R.drawable.header_fakultas);
-				}
-				else if (jsonObject.has("nama fakultas")){
-					mTitleView.setText(jsonObject.getString("nama fakultas"));
-					mImageView.setImageResource(
-							getResources().getIdentifier(
-									jsonObject.getString("header foto"), "drawable", getActivity().getPackageName()
-							)
-					);
-				}
-				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("kemahasiswaan")){
-					mTitleView.setText("Kemahasiswaan");
-					mImageView.setImageResource(R.drawable.home_kemahasiswaan);
-				}
-				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
-					mTitleView.setText("Kantin");
-					mImageView.setImageResource(R.drawable.hmif);
-				}
-				else if (jsonObject.has("foto")){
-					mTitleView.setText(jsonObject.getString("nama"));
-					mImageView.setImageResource(
-							getResources().getIdentifier(
-									jsonObject.getString("foto"), "drawable", getActivity().getPackageName()
-							)
-					);
-				}
-				else if (jsonObject.has("daftar_makanan")){
-					mTitleView.setText(jsonObject.getString("nama"));
-					mImageView.setImageResource(
-							getResources().getIdentifier(
-									"apps_header_logo", "drawable", getActivity().getPackageName()
-							)
-					);
-				}
-				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
-					mTitleView.setText("Ruang Kuliah");
-					mImageView.setImageResource(R.drawable.hmif);
-				}
-				else if (jsonObject.has("gedung")) {
-					mTitleView.setText(jsonObject.getString("gedung"));
-					mImageView.setImageResource(R.drawable.hmif);
-				}
+
+				mTitleView.setText(title);
+				loadImage(mImageView, imgUri);
 
 				// Set content
 				int jumlah_content = array.length();
@@ -290,66 +281,58 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 					TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
 
 					final JSONObject obj = array.getJSONObject(i);
+
 					if (obj.has("header foto") && !obj.getString("header foto").equals("-")) {
-						icon.setImageDrawable(
-								ResourcesCompat.getDrawable(
-										getResources(),
-										getResources().getIdentifier(
-												obj.getString("header foto"),
-												"drawable",
-												getActivity().getApplicationContext().getPackageName()
-										),
-										null
-								)
-						);
-					} else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
-						icon.setImageDrawable(
-								ResourcesCompat.getDrawable(
-										getResources(),
-										getResources().getIdentifier(
-												obj.getString("foto"),
-												"drawable",
-												getActivity().getApplicationContext().getPackageName()
-										),
-										null
-								)
-						);
-					} else if (obj.has("keterangan")) {
+						loadImage(icon, obj.getString("header foto"));
+					}
+					else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
+						loadImage(icon, obj.getString("foto"));
+					}
+					else if (obj.has("keterangan")) {
 						v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
-					} else {
-						icon.setImageDrawable(
-								ResourcesCompat.getDrawable(getResources(), R.drawable.apps_header_logo, null));
+					}
+					else {
+						loadImage(icon, "apps_header_logo");
 					}
 
 					if (obj.has("nama fakultas")) {
 						textGeneral.setText(obj.getString("nama fakultas"));
 						textDetail.setText(obj.getString("nama panjang"));
-					} else if (obj.has("nama himpunan")) {
+					}
+					else if (obj.has("nama himpunan")) {
 						textGeneral.setText(obj.getString("nama himpunan"));
 						textDetail.setText(obj.getString("kepanjangan"));
-					} else if (obj.has("kategori unit")) {
+					}
+					else if (obj.has("kategori unit")) {
 						textGeneral.setText(obj.getString("kategori unit"));
 						textDetail.setVisibility(View.GONE);
-					} else if (obj.has("nama unit")) {
+					}
+					else if (obj.has("nama unit")) {
 						textGeneral.setText(obj.getString("nama unit"));
 						if (obj.getString("kepanjangan").equals("-")) {
 							textDetail.setVisibility(View.GONE);
-						} else {
+						}
+						else {
 							textDetail.setText(obj.getString("kepanjangan"));
 						}
-					} else if (obj.has("judul")) {
+					}
+					else if (obj.has("judul")) {
 						textGeneral.setText(obj.getString("judul"));
 						textDetail.setVisibility(View.GONE);
-					} else if (obj.has("keterangan")) { // Ruangan
+					}
+					else if (obj.has("keterangan")) { // Ruangan
 						textGeneral.setText(obj.getString("nama"));
 						textDetail.setText(obj.getString("keterangan"));
-					} else if (obj.has("foto")) { // kantin
+					}
+					else if (obj.has("foto")) { // kantin
 						textGeneral.setText(obj.getString("nama"));
 						textDetail.setVisibility(View.GONE);
-					} else if (obj.has("ruangan")) {
+					}
+					else if (obj.has("ruangan")) {
 						textGeneral.setText(obj.getString("gedung"));
 						textDetail.setText(obj.getString("jumlah"));
-					} else if (obj.has("daftar_makanan")) {
+					}
+					else if (obj.has("daftar_makanan")) {
 						textGeneral.setText(obj.getString("nama"));
 						textDetail.setVisibility(View.GONE);
 					}
@@ -362,7 +345,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 								mListener.onCardClicked(MainActivity.PAGES, obj);
 							}
 						});
-					} else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")
+					}
+					else if (obj.has("menu") || obj.has("kategori unit") || obj.has("nama fakultas")
 							|| obj.has("ruangan") || obj.has("subkantin") || obj.has("daftar_makanan")) {
 						v.setOnClickListener(new View.OnClickListener() {
 							@Override
@@ -370,14 +354,8 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 								mListener.onCardClicked(MainActivity.MENU_LIST, obj);
 							}
 						});
-					} else if (obj.has("judul")) {
-						v.setOnClickListener(new View.OnClickListener() {
-							@Override
-							public void onClick(View v) {
-								mListener.onCardClicked(MainActivity.PLAIN_INFORMATION, obj);
-							}
-						});
-					} else {
+					}
+					else {
 						// list ruangan
 						if (!obj.has("keterangan")) {
 							v.setOnClickListener(new View.OnClickListener() {
@@ -396,5 +374,15 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 
 			}
 		}
+	}
+
+	private void loadImage(ImageView dest, String uri) {
+
+		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
+
+		Glide.with(getContext())
+				.load(baseURL + uri + ".png")
+				.into(dest);
+
 	}
 }
