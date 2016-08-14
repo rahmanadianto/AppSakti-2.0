@@ -4,8 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:paddingTop="10dp"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
     tools:context="com.hmif.appssakti.PageFragment">
 
     <TextView

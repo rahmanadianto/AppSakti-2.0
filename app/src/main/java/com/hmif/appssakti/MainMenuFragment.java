@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hmif.custom.MainMenuListener;
 
 import java.util.List;
@@ -150,11 +151,6 @@ public class MainMenuFragment extends Fragment {
 				"hmif"
 		};
 
-		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
-
-		Glide.with(getContext())
-				.load(baseURL + urls[image_id] + ".png")
-				.into(dest);
-
+		MainActivity.loadImage(getContext(), dest, urls[image_id]);
 	}
 }

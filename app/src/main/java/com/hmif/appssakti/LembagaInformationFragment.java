@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
@@ -121,7 +122,7 @@ public class LembagaInformationFragment extends Fragment implements ObservableSc
 		setSocmedInfo();
 
 		if (!jsonObject.getString("logo").equals("-")) {
-			loadImage(mTitleImageView, jsonObject.getString("logo"));
+			MainActivity.loadImage(getContext(), mTitleImageView, jsonObject.getString("logo"));
 		}
 		else{
 			mTitleImageView.setVisibility(View.GONE);
@@ -132,7 +133,7 @@ public class LembagaInformationFragment extends Fragment implements ObservableSc
 		mHeaderView.setBackgroundColor(Color.parseColor("#" + color));
 		mImageView.setBackgroundColor(Color.parseColor("#" + color));
 
-		loadImage(mImageView, jsonObject.getString("header foto"));
+		MainActivity.loadImage(getContext(), mImageView, jsonObject.getString("header foto"));
 
 		List<String> titles = new ArrayList<>();
 		List<String> contents = new ArrayList<>();
@@ -301,16 +302,6 @@ public class LembagaInformationFragment extends Fragment implements ObservableSc
 			return 0;
 		}
 		return 1;
-	}
-
-	private void loadImage(ImageView dest, String uri) {
-
-		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/media/";
-
-		Glide.with(getContext())
-				.load(baseURL + uri + ".png")
-				.into(dest);
-
 	}
 
 }

@@ -12,12 +12,14 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
-import com.backendless.Backendless;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hmif.custom.MainMenuListener;
 import com.hmif.custom.OnCardClickListener;
 import org.json.JSONArray;
@@ -87,9 +89,6 @@ public class MainActivity extends AppCompatActivity
 		drawerToggle = mNavigationDrawerFragment.getDrawerToggle();
 
 		state = STATE_SHOW_BURGER;
-
-		// Init Backendless
-		Backendless.initApp(this, "A73CAAF6-16BC-99FD-FFDB-36CE5C026900", "44DC6EF3-C14F-FE74-FFAB-5848B45CC900", "v1");
 	}
 
 	@Override
@@ -429,6 +428,17 @@ public class MainActivity extends AppCompatActivity
 		}
 
 		return null;
+	}
+
+	public static void loadImage(Context context, ImageView dest, String uri) {
+
+		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/media/";
+
+		Glide.with(context)
+				.load(baseURL + uri + ".png")
+				.diskCacheStrategy(DiskCacheStrategy.ALL)
+				.into(dest);
+
 	}
 
 }

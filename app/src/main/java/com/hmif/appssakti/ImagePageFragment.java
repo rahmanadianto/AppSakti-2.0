@@ -10,6 +10,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +40,7 @@ public class ImagePageFragment extends Fragment {
         TextView textTitle = (TextView) view.findViewById(R.id.image_title);
         textTitle.setText(title);
         ImageView imageContent = (ImageView) view.findViewById(R.id.image_content);
-        imageContent.setImageResource(getResources().getIdentifier(content, "drawable", getActivity().getPackageName()));
+        MainActivity.loadImage(getContext(), imageContent, content);
 
         return view;
     }

@@ -2383,7 +2383,7 @@
       "menu": "Kantin",
       "isi": [
         {
-          "nama": "Kantin East Corner",
+          "nama": "East Corner",
           "foto": "img_east_corner",
           "subkantin": [
             {
@@ -2619,7 +2619,7 @@
           ]
         },
         {
-          "nama": "Kantin Matahari",
+          "nama": "Matahari",
           "foto": "img_kantin_matahari",
           "daftar_makanan": [
             {
@@ -2685,7 +2685,7 @@
           ]
         },
         {
-          "nama": "Kantin Ganesha 4072",
+          "nama": "Ganesha 4072",
           "foto": "img_ganesha_4072",
           "daftar_makanan": [
             {
@@ -2707,7 +2707,7 @@
           ]
         },
         {
-          "nama": "Kantin Saraga",
+          "nama": "Saraga",
           "foto": "img_saraga",
           "daftar_makanan": [
             {

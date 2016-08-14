@@ -16,6 +16,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
@@ -222,7 +223,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				}
 				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Himpunan")) {
 					title = "Himpunan";
-					imgUri = "header_falultas";
+					imgUri = "header_fakultas";
 				}
 				else if (jsonObject.has("nama fakultas")){
 					title = jsonObject.getString("nama fakultas");
@@ -267,7 +268,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 			try {
 
 				mTitleView.setText(title);
-				loadImage(mImageView, imgUri);
+				MainActivity.loadImage(getContext(), mImageView, imgUri);
 
 				// Set content
 				int jumlah_content = array.length();
@@ -281,19 +282,20 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 					TextView textDetail = (TextView) v.findViewById(R.id.item_text_detail);
 
 					final JSONObject obj = array.getJSONObject(i);
-
+					String img_icon = null;
 					if (obj.has("header foto") && !obj.getString("header foto").equals("-")) {
-						loadImage(icon, obj.getString("header foto"));
+						img_icon = obj.getString("header foto");
 					}
 					else if (obj.has("foto") && !obj.getString("foto").equals("-")) {
-						loadImage(icon, obj.getString("foto"));
+						img_icon = obj.getString("foto");
 					}
 					else if (obj.has("keterangan")) {
 						v.findViewById(R.id.item_icon_container).setVisibility(View.GONE);
 					}
 					else {
-						loadImage(icon, "apps_header_logo");
+						img_icon = "apps_header_logo";
 					}
+					MainActivity.loadImage(getContext(), icon, img_icon);
 
 					if (obj.has("nama fakultas")) {
 						textGeneral.setText(obj.getString("nama fakultas"));
@@ -374,15 +376,5 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 
 			}
 		}
-	}
-
-	private void loadImage(ImageView dest, String uri) {
-
-		String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
-
-		Glide.with(getContext())
-				.load(baseURL + uri + ".png")
-				.into(dest);
-
 	}
 }
