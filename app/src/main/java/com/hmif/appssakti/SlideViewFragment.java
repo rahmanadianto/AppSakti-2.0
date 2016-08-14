@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hmif.custom.CirclePageIndicator;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -21,7 +23,7 @@ import org.json.JSONObject;
  * Created by Rahman Adianto
  */
 
-public class SlideViewFragment extends Fragment {
+public class SlideViewFragment extends Fragment implements ViewPager.OnPageChangeListener {
 
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
@@ -30,6 +32,7 @@ public class SlideViewFragment extends Fragment {
     private int arrayLength;
     private Toolbar toolbar;
     private String toolbarTitle;
+    private CirclePageIndicator mIndicator;
 
     public SlideViewFragment() {
         // Required empty public constructor
@@ -95,8 +98,25 @@ public class SlideViewFragment extends Fragment {
 
         viewPager.setAdapter(adapter);
 
+        mIndicator = (CirclePageIndicator) view.findViewById(R.id.circle_indicator);
+        if (mIndicator != null) {
+            mIndicator.setViewPager(viewPager);
+        }
+        if (mIndicator != null) {
+            mIndicator.setOnPageChangeListener(this);
+        }
+
         return view;
     }
+
+    @Override
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+    @Override
+    public void onPageSelected(int position) {}
+
+    @Override
+    public void onPageScrollStateChanged(int state) {}
 
     private void addPage(String title, String content) {
 
