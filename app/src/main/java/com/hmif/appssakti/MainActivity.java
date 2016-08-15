@@ -211,27 +211,24 @@ public class MainActivity extends AppCompatActivity
 					onCardClicked(MENU_LIST, kemahasiswaan);
 					break;
 				case 1:
-					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(0));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(0)); // Kabinet
 					break;
 				case 2:
-					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(1));
-					break;
-				case 3:
 					onCardClicked(MENU_LIST, himpunan);
 					break;
-				case 4:
+				case 3:
 					onCardClicked(MENU_LIST, unit);
 					break;
+				case 4:
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(1)); // Kongres
+					break;
 				case 5:
-					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(2));
+					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(2)); // MWA-WM
 					break;
 				case 6:
-					onCardClicked(INFORMATION, lembagaPusat.getJSONObject(3));
-					break;
-				case 7:
 					onCardClicked(MENU_LIST, kantin);
 					break;
-				case 8:
+				case 7:
 					onCardClicked(MENU_LIST, ruangan);
 					break;
 

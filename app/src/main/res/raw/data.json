@@ -322,21 +322,6 @@
       "menu": "lembaga pusat",
       "isi": [
         {
-          "nama lembaga": "Kongres",
-          "kepanjangan": "-",
-          "deskripsi arah gerak dan kegiatan": "Kongres KM-ITB adalah pemegang kedaulatan tertinggi di KM-ITB, yang anggotanya terdiri dari perwakilan-perwakilan yang dipercaya Himpunan pengutusnya untuk membuat kebijakan dalam ranah terpusat.",
-          "nama ketua": "Reza riezqi ramadhan GL'12",
-          "Program Kerja Unggulan": "Saat ini Kongres KM-ITB sedang menyiapkan Sidang Istimewa yang akan mengubah sistem kemahasiswaan, perumusan Rencana Strategis kemahasiswaan, serta Diklat Calon Senator",
-          "facebook": " Kongres KM-ITB",
-          "twitter": "@KongresKMITB",
-          "website": "-",
-          "line": "-",
-          "sekretariat": "-",
-          "logo": "kongres",
-          "header foto": "header_kongres",
-          "color": "0097a7"
-        },
-        {
           "nama lembaga": "Kabinet KM-ITB",
           "kepanjangan": "-",
           "deskripsi arah gerak dan kegiatan": "Kabinet Keluarga Mahasiswa Institut Teknologi Bandung, selanjutnya disingkat Kabinet KM-ITB, adalah lembaga eksekutif tertinggi di tingkat pusat dalam kehidupan kemahasiswaan di seluruhkampus Institut Teknologi Bandung dan bertanggung jawab kepada Kongres KM-ITB. Kabinet KM-ITB mendapatkan dukungan sumber daya dari Himpunan Mahasiswa Jurusan dan Unit Kegiatan Mahasiswa untuk melaksanakan program pemenuhan kebutuhan seluruh mahasiswa dan program terpusat yang telah disetujui oleh Kongres KM-ITB.Kabinet KM-ITB mengordinasikan Himpunan Mahasiswa Jurusan dan Unit Kegiatan Mahasiswa untuk melaksanakan program pemenuhan kebutuhan (P3) seluruh mahasiswa dan program terpusat setelah mendapatkan persetujuan dari Kongres KM-ITB.",
@@ -352,6 +337,21 @@
           "color": "ffc107"
         },
         {
+          "nama lembaga": "Kongres",
+          "kepanjangan": "-",
+          "deskripsi arah gerak dan kegiatan": "Kongres KM-ITB adalah pemegang kedaulatan tertinggi di KM-ITB, yang anggotanya terdiri dari perwakilan-perwakilan yang dipercaya Himpunan pengutusnya untuk membuat kebijakan dalam ranah terpusat.",
+          "nama ketua": "Reza riezqi ramadhan GL'12",
+          "Program Kerja Unggulan": "Saat ini Kongres KM-ITB sedang menyiapkan Sidang Istimewa yang akan mengubah sistem kemahasiswaan, perumusan Rencana Strategis kemahasiswaan, serta Diklat Calon Senator",
+          "facebook": " Kongres KM-ITB",
+          "twitter": "@KongresKMITB",
+          "website": "-",
+          "line": "-",
+          "sekretariat": "-",
+          "logo": "kongres",
+          "header foto": "header_kongres",
+          "color": "0097a7"
+        },
+        {
           "nama lembaga": "MWA-WM",
           "kepanjangan": "Majelis Wali Amanat Wakil Mahasiswa",
           "deskripsi arah gerak dan kegiatan": "MWA-WM ITB dibentuk berdasarkan Peraturan Pemerintah Republik Indonesia No. 155 Tahun 2000 dan baru mulai berfungsi pada tahun 2001. Adapun peran MWA-WM adalah sebagai penerjemah sekaligus penghubung keinginan mahasiswa terhadap kebijakan-kebijakan yang diambil ITB. MWA-WM terbuka bagi mahasiswa ITB yang ingin memberikan pandangan agar menghasilkan kebijakan yang baik.",
@@ -365,21 +365,6 @@
           "logo": "mwawm",
           "header foto": "header_mwawm",
           "color": "e65100"
-        },
-        {
-          "nama lembaga": "Tim Beasiswa",
-          "kepanjangan": "-",
-          "deskripsi arah gerak dan kegiatan": "Tim Beasiswa adalah badan independen eksekutif yang dalam kegiatannya bersifat sosial dan tidak politis. Tim beasiswa bertanggung jawab terhadap Kongres KM –ITB yang sah dan seluruh mahasiswa Itb dalam penyelenggaran beasiswa KM-ITB. Sejak tahun 2014 status Tim Beasiswa tidak aktif dan fungsinya di jalankan oleh Kementrian Kesejahteraan Mahasiswa Kabinet KM-ITB",
-          "nama ketua": "-",
-          "Program Kerja Unggulan": "-",
-          "facebook": "-",
-          "twitter": "@kesmakmitb",
-          "website": "-",
-          "line": "-",
-          "sekretariat": "",
-          "logo": "-",
-          "header foto": "header_beasiswa",
-          "color": "212121"
         }
       ]
     },

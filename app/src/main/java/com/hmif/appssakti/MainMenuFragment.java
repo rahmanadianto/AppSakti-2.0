@@ -13,9 +13,6 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.hmif.custom.MainMenuListener;
 
 import java.util.List;
@@ -43,37 +40,33 @@ public class MainMenuFragment extends Fragment {
 		fragment.mainMenuIcon = mainMenuIcon;
 		fragment.mainMenuItem = mainMenuItem;
 		fragment.context = context;
-		fragment.viewId = new int[9];
-		fragment.imageId = new int[9];
+		fragment.viewId = new int[8];
+		fragment.imageId = new int[8];
 
 		//Kemahasiswaan
 		fragment.viewId[0] = R.id.card1;
-		fragment.imageId[0] = R.id.menu_image;
-		//Kongres
+		fragment.imageId[0] = R.id.menu_image1;
+		//Kabinet
 		fragment.viewId[1] = R.id.card2;
 		fragment.imageId[1] = R.id.menu_image2;
-		//Kabinet
+		//Himpunan
 		fragment.viewId[2] = R.id.card3;
 		fragment.imageId[2] = R.id.menu_image3;
-		//Himpunan
+		//Unit
 		fragment.viewId[3] = R.id.card4;
 		fragment.imageId[3] = R.id.menu_image4;
-		//Unit
+		//Kongres
 		fragment.viewId[4] = R.id.card5;
 		fragment.imageId[4] = R.id.menu_image5;
 		//MWA-WM
 		fragment.viewId[5] = R.id.card6;
 		fragment.imageId[5] = R.id.menu_image6;
-		//Team Beasiswa
+		//Kantin
 		fragment.viewId[6] = R.id.card7;
 		fragment.imageId[6] = R.id.menu_image7;
-
-		//Kantin
+		//Ruang
 		fragment.viewId[7] = R.id.card8;
 		fragment.imageId[7] = R.id.menu_image8;
-		//Ruang
-		fragment.viewId[8] = R.id.card9;
-		fragment.imageId[8] = R.id.menu_image9;
 
 		return fragment;
 	}
@@ -93,7 +86,7 @@ public class MainMenuFragment extends Fragment {
 		((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
 		(getActivity()).setTitle(null);
 
-		for(int i = 0; i < 9; i++){
+		for(int i = 0; i < 8; i++){
 			View card = v.findViewById(viewId[i]);
 			ImageView imageView = (ImageView) v.findViewById(imageId[i]);
 
@@ -141,12 +134,11 @@ public class MainMenuFragment extends Fragment {
 
 		String[] urls = new String[] {
 				"home_kemahasiswaan",
-				"home_kongres",
 				"home_kabinet",
 				"home_hmj",
 				"home_unit",
+				"home_kongres",
 				"home_mwa_wm",
-				"home_beasiswa",
 				"hmif",
 				"hmif"
 		};

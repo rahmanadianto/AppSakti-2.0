@@ -17,438 +17,379 @@
 		android:paddingBottom="@dimen/standard_10dp"
 		android:orientation="vertical">
 
-		<FrameLayout
-			xmlns:card_view="http://schemas.android.com/apk/res-auto"
-			android:id="@+id/card1"
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="match_parent"
 			android:layout_height="0dp"
-			android:layout_weight="5"
-			android:layout_marginTop="@dimen/standard_10dp"
-			android:foreground="?android:selectableItemBackground">
+			android:layout_weight="3"
+			android:orientation="horizontal"
+			android:paddingTop="@dimen/standard_15dp"
+			android:baselineAligned="false"
+			android:background="#fff">
 
-			<RelativeLayout
-				android:layout_width="match_parent"
-				android:layout_height="match_parent">
+			<FrameLayout
+				android:id="@+id/card1"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginRight="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
 
-				<ImageView
-					android:background="#4CAF50"
-					android:id="@+id/menu_image"
+				<RelativeLayout
 					android:layout_width="match_parent"
-					android:layout_height="match_parent"
-					android:scaleType="centerCrop"/>
+					android:layout_height="match_parent">
 
-				<View
+					<ImageView
+						android:background="#4CAF50"
+						android:id="@+id/menu_image1"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
+
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/first_menu_overlay_height"
+						android:background="#44ffffff"
+						android:layout_alignParentBottom="true"/>
+
+					<TextView
+						android:id="@+id/menu_text"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/first_menu_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"
+						android:text="Kemahasiswaan"/>
+
+				</RelativeLayout>
+
+			</FrameLayout>
+
+			<FrameLayout
+				android:id="@+id/card2"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginLeft="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
+
+				<RelativeLayout
 					android:layout_width="match_parent"
-					android:layout_height="@dimen/first_menu_overlay_height"
-					android:background="#44ffffff"
-					android:layout_alignParentBottom="true"/>
+					android:layout_height="match_parent">
 
-				<TextView
-					android:id="@+id/menu_text"
-					android:layout_width="wrap_content"
-					android:layout_height="wrap_content"
-					android:textColor="@color/main_menu_text"
-					android:layout_alignParentBottom="true"
-					android:layout_margin="@dimen/first_menu_margin"
-					android:textSize="@dimen/main_menu_text_size"
-					android:layout_centerHorizontal="true"
-					android:textStyle="bold"
-					android:text="Kemahasiswaan"/>
+					<ImageView
+						android:background="#FFC107"
+						android:id="@+id/menu_image2"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
 
-			</RelativeLayout>
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
 
-		</FrameLayout>
+					<TextView
+						android:id="@+id/menu_text3"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"
+						android:text="Kabinet"/>
+
+				</RelativeLayout>
+
+			</FrameLayout>
+
+		</LinearLayout>
 
 		<LinearLayout
-			android:id="@+id/main_menu_container"
+			xmlns:android="http://schemas.android.com/apk/res/android"
 			android:layout_width="match_parent"
 			android:layout_height="0dp"
-			android:layout_weight="10"
-			android:orientation="vertical">
+			android:layout_weight="3"
+			android:orientation="horizontal"
+			android:paddingTop="@dimen/standard_15dp"
+			android:baselineAligned="false"
+			android:background="#fff">
 
-			<LinearLayout
-				xmlns:android="http://schemas.android.com/apk/res/android"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:layout_weight="3"
-				android:orientation="horizontal"
-				android:paddingTop="@dimen/standard_15dp"
-				android:baselineAligned="false"
-				android:background="#fff">
+			<FrameLayout
+				android:id="@+id/card3"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginRight="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
 
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card2"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginRight="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
 
-					<RelativeLayout
+					<ImageView
+						android:background="#FF5722"
+						android:id="@+id/menu_image3"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
 
-						<ImageView
-							android:background="#4DD0E1"
-							android:id="@+id/menu_image2"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
-
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
-
-						<TextView
-							android:id="@+id/menu_text2"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"
-							android:text="Kongres"/>
-
-					</RelativeLayout>
-
-				</FrameLayout>
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card3"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginLeft="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<View
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
 
-						<ImageView
-							android:background="#FFC107"
-							android:id="@+id/menu_image3"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
+					<TextView
+						android:id="@+id/menu_text4"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Himpunan"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"/>
 
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
+				</RelativeLayout>
 
-						<TextView
-							android:id="@+id/menu_text3"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"
-							android:text="Kabinet"/>
+			</FrameLayout>
 
-					</RelativeLayout>
+			<FrameLayout
+				android:id="@+id/card4"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginLeft="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
 
-				</FrameLayout>
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
 
-			</LinearLayout>
-
-			<LinearLayout
-				xmlns:android="http://schemas.android.com/apk/res/android"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:layout_weight="3"
-				android:orientation="horizontal"
-				android:paddingTop="@dimen/standard_15dp"
-				android:baselineAligned="false"
-				android:background="#fff">
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card4"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginRight="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<ImageView
+						android:background="#3F51B5"
+						android:id="@+id/menu_image4"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
 
-						<ImageView
-							android:background="#FF5722"
-							android:id="@+id/menu_image4"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
-
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
-
-						<TextView
-							android:id="@+id/menu_text4"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="Himpunan"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
-
-					</RelativeLayout>
-
-				</FrameLayout>
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card5"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginLeft="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<View
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
 
-						<ImageView
-							android:background="#3F51B5"
-							android:id="@+id/menu_image5"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
+					<TextView
+						android:id="@+id/menu_text5"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Unit"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"/>
 
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
+				</RelativeLayout>
 
-						<TextView
-							android:id="@+id/menu_text5"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="Unit"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
+			</FrameLayout>
 
-					</RelativeLayout>
+		</LinearLayout>
 
-				</FrameLayout>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="3"
+			android:orientation="horizontal"
+			android:paddingTop="@dimen/standard_15dp"
+			android:baselineAligned="false"
+			android:background="#fff">
 
-			</LinearLayout>
+			<FrameLayout
+				android:id="@+id/card5"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginRight="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
 
-			<LinearLayout
-				xmlns:android="http://schemas.android.com/apk/res/android"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:layout_weight="3"
-				android:orientation="horizontal"
-				android:paddingTop="@dimen/standard_15dp"
-				android:baselineAligned="false"
-				android:background="#fff">
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
 
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card6"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginRight="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<ImageView
+						android:background="#4DD0E1"
+						android:id="@+id/menu_image5"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
 
-						<ImageView
-							android:background="#26A69A"
-							android:id="@+id/menu_image6"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
-
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
-
-						<TextView
-							android:id="@+id/menu_text6"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="MWA-WM"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
-
-					</RelativeLayout>
-
-				</FrameLayout>
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card7"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginLeft="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<View
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
 
-						<ImageView
-							android:background="#D81B60"
-							android:id="@+id/menu_image7"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
+					<TextView
+						android:id="@+id/menu_text2"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"
+						android:text="Kongres"/>
 
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
+				</RelativeLayout>
 
-						<TextView
-							android:id="@+id/menu_text7"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="Tim Beasiswa"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
+			</FrameLayout>
 
-					</RelativeLayout>
+			<FrameLayout
+				android:id="@+id/card6"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginLeft="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
 
-				</FrameLayout>
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
 
-			</LinearLayout>
-
-			<LinearLayout
-				xmlns:android="http://schemas.android.com/apk/res/android"
-				android:layout_width="match_parent"
-				android:layout_height="0dp"
-				android:layout_weight="3"
-				android:orientation="horizontal"
-				android:paddingTop="@dimen/standard_15dp"
-				android:baselineAligned="false"
-				android:background="#fff">
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card8"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginRight="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<ImageView
+						android:background="#26A69A"
+						android:id="@+id/menu_image6"
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
 
-						<ImageView
-							android:background="#FDD835"
-							android:id="@+id/menu_image8"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
-
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
-
-						<TextView
-							android:id="@+id/menu_text8"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="Kantin"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
-
-					</RelativeLayout>
-
-				</FrameLayout>
-
-				<FrameLayout
-					xmlns:card_view="http://schemas.android.com/apk/res-auto"
-					android:id="@+id/card9"
-					android:layout_width="0dp"
-					android:layout_height="match_parent"
-					android:layout_weight="1"
-					android:layout_marginLeft="@dimen/standard_7dp"
-					android:foreground="?android:selectableItemBackground">
-
-					<RelativeLayout
+					<View
 						android:layout_width="match_parent"
-						android:layout_height="match_parent">
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
 
-						<ImageView
-							android:background="#FDD835"
-							android:id="@+id/menu_image9"
-							android:layout_width="match_parent"
-							android:layout_height="match_parent"
-							android:scaleType="centerCrop"/>
+					<TextView
+						android:id="@+id/menu_text6"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="MWA-WM"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"/>
 
-						<View
-							android:layout_width="match_parent"
-							android:layout_height="@dimen/main_menu_overlay_height"
-							android:background="@color/main_menu_overlay_color"
-							android:layout_alignParentBottom="true"/>
+				</RelativeLayout>
 
-						<TextView
-							android:id="@+id/menu_text9"
-							android:layout_width="wrap_content"
-							android:layout_height="wrap_content"
-							android:text="Daftar Ruangan"
-							android:textColor="@color/main_menu_text"
-							android:layout_alignParentBottom="true"
-							android:layout_margin="@dimen/main_menu_text_margin"
-							android:textSize="@dimen/main_menu_text_size"
-							android:layout_centerHorizontal="true"
-							android:textStyle="bold"/>
+			</FrameLayout>
 
-					</RelativeLayout>
+		</LinearLayout>
 
-				</FrameLayout>
+		<LinearLayout
+			xmlns:android="http://schemas.android.com/apk/res/android"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="3"
+			android:orientation="horizontal"
+			android:paddingTop="@dimen/standard_15dp"
+			android:baselineAligned="false"
+			android:background="#fff">
 
-			</LinearLayout>
+			<FrameLayout
+				android:id="@+id/card7"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginRight="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<ImageView
+						android:background="#FDD835"
+						android:id="@+id/menu_image7"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
+
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
+
+					<TextView
+						android:id="@+id/menu_text8"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Kantin"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"/>
+
+				</RelativeLayout>
+
+			</FrameLayout>
+
+			<FrameLayout
+				android:id="@+id/card8"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:layout_weight="1"
+				android:layout_marginLeft="@dimen/standard_7dp"
+				android:foreground="?android:selectableItemBackground">
+
+				<RelativeLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent">
+
+					<ImageView
+						android:background="#FDD835"
+						android:id="@+id/menu_image8"
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:scaleType="centerCrop"/>
+
+					<View
+						android:layout_width="match_parent"
+						android:layout_height="@dimen/main_menu_overlay_height"
+						android:background="@color/main_menu_overlay_color"
+						android:layout_alignParentBottom="true"/>
+
+					<TextView
+						android:id="@+id/menu_text9"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="Daftar Ruangan"
+						android:textColor="@color/main_menu_text"
+						android:layout_alignParentBottom="true"
+						android:layout_margin="@dimen/main_menu_text_margin"
+						android:textSize="@dimen/main_menu_text_size"
+						android:layout_centerHorizontal="true"
+						android:textStyle="bold"/>
+
+				</RelativeLayout>
+
+			</FrameLayout>
 
 		</LinearLayout>
 
