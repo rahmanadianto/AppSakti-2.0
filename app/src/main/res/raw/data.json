@@ -2781,6 +2781,7 @@
         {
           "gedung": "LFM",
           "jumlah": "1 ruangan",
+          "header foto": "gedung_lfm",
           "ruangan": [
             {
               "nama": "9009",
@@ -2791,6 +2792,7 @@
         {
           "gedung": "Labtek VIII",
           "jumlah": "2 ruangan",
+          "header foto": "gedung_labtek_viii",
           "ruangan": [
             {
               "nama": "9011",
@@ -2805,6 +2807,7 @@
         {
           "gedung": "Labtek VII",
           "jumlah": "3 ruangan",
+          "header foto": "gedung_labtek_vii",
           "ruangan": [
             {
               "nama": "9012",
@@ -2823,6 +2826,7 @@
         {
           "gedung": "Oktagon",
           "jumlah": "9 ruangan",
+          "header foto": "-",
           "ruangan": [
             {
               "nama": "9016",
@@ -2865,6 +2869,7 @@
         {
           "gedung": "TVST",
           "jumlah": "3 ruangan",
+          "header foto": "-",
           "ruangan": [
             {
               "nama": "9022",
@@ -2883,6 +2888,7 @@
         {
           "gedung": "GKU Barat",
           "jumlah": "22 ruangan",
+          "header foto": "gedung_gkub",
           "ruangan": [
             {
               "nama": "9103",
@@ -2977,6 +2983,7 @@
         {
           "gedung": "GKU Timur",
           "jumlah": "11 ruangan",
+          "header foto": "gedung_gkut",
           "ruangan": [
             {
               "nama": "9212",
@@ -3027,6 +3034,7 @@
         {
           "gedung": "Labtek V",
           "jumlah": "6 ruangan",
+          "header foto": "gedung_labtek_v",
           "ruangan": [
             {
               "nama": "9301",
@@ -3057,6 +3065,7 @@
         {
           "gedung": "Labtek VI",
           "jumlah": "7 ruangan",
+          "header foto": "gedung_labtek_vi",
           "ruangan": [
             {
               "nama": "9307",
@@ -3091,6 +3100,7 @@
         {
           "gedung": "Labtek I",
           "jumlah": "5 ruangan",
+          "header foto": "-",
           "ruangan": [
             {
               "nama": "9401",
@@ -3117,6 +3127,7 @@
         {
           "gedung": "Basic Science A",
           "jumlah": "1 ruangan",
+          "header foto": "gedung_bsc_a",
           "ruangan": [
             {
               "nama": "BSC-A",

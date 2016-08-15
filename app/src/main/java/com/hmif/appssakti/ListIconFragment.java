@@ -248,7 +248,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				}
 				else if (jsonObject.has("gedung")) {
 					title = jsonObject.getString("gedung");
-					imgUri = "hmif";
+					imgUri = jsonObject.getString("header foto");
 				}
 			}
 			catch (Exception e) {
@@ -319,11 +319,11 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 						textGeneral.setText(obj.getString("judul"));
 						textDetail.setVisibility(View.GONE);
 					}
-					else if (obj.has("keterangan")) { // Ruangan
+					else if (obj.has("keterangan")) {
 						textGeneral.setText(obj.getString("nama"));
 						textDetail.setText(obj.getString("keterangan"));
 					}
-					else if (obj.has("foto")) { // kantin
+					else if (obj.has("foto")) {
 						textGeneral.setText(obj.getString("nama"));
 						textDetail.setVisibility(View.GONE);
 					}

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.hmif.appssakti.MainActivity;
 import com.hmif.appssakti.R;
 
 import java.util.List;
@@ -88,11 +89,7 @@ public class IconTextAdapter extends BaseAdapter{
 	private void loadImage(ImageView dest, String uri) {
 
 		if (network == true) {
-			String baseURL = "https://api.backendless.com/A73CAAF6-16BC-99FD-FFDB-36CE5C026900/v1/files/assets/";
-
-			Glide.with(context)
-					.load(baseURL + uri + ".png")
-					.into(dest);
+			MainActivity.loadImage(context, dest, uri);
 		}
 		else {
 			Glide.with(context)
