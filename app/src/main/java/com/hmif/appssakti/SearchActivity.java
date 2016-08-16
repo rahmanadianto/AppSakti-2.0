@@ -247,12 +247,12 @@ public class SearchActivity extends AppCompatActivity {
 			if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 
 				try {
-					jsonArray = loadJSON(R.raw.data).getJSONArray("OSKM");
+					jsonArray = loadJSON(R.raw.data).getJSONArray("DATA");
 
 					if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
 						String query = intent.getStringExtra(SearchManager.QUERY);
 
-						search(3, jsonArray, query);
+						search(2, jsonArray, query);
 					}
 
 				} catch (JSONException | IOException e) {

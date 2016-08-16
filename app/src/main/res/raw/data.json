@@ -1,44 +1,15 @@
 {
-  "OSKM": [
+  "DATA": [
     {
-      "menu": "Tentang OSKM",
+      "menu": "Tentang INTEGRASI",
       "pages": [
         {
           "page_title": "Deskripsi Singkat",
-          "page_content": "OSKM itu adalah orientasi mahasiswa baru ITB 2015 untuk mengenal dunia kemahasiswaan ITB. Di OSKM ITB 2015, mahasiswa baru akan dikenalkan kepada konsep insan akademis sebagai tuntutan mahasiswa ketika lulus nanti dengan harapan pembelajarannya di kampus akan lebih efektif.<br/><br/><b>Ketua</b><br/>Mahardhika Zein - Teknik Sipil 2012"
+          "page_content": "Inisiasi Terpusat Keluarga Mahasiswa ITB 2016, disingkat INTEGRASI ITB 2016, merupakan suatu rangkaian acara dari penerimaan mahasiswa baru yang diharapkan dapat menjadi wadah kolaborasi dan melibatkan seluruh elemen massa KM ITB tanpa membeda-bedakan unit, himpunan, maupun lembaga lainnya. INTEGRASI ITB 2016 merupakan momentum inisiasi bukan orientasi karena yang akan dilakukan di dalam acara ini adalah memantik semangat para mahasiswa baru yang nyala semangatnya akan dijaga oleh lembaga-lembaga di KM ITB dengan stakeholder utama yaitu Kementerian Kaderisasi TPB.<br/><br/><b>Ketua</b><br/>Miqdam Furqany - Teknik Pertambangan 2013"
         },
         {
           "page_title": "Visi & Misi",
-          "page_content": "<b>Visi</b><br/>OSKM ITB sebagai penyadaran akan identitas sebagai insan akademis masa depan Indonesia<br/><br/><b>Misi</b><br/>1. Menyadarkan akan peran sebagai Intelektual Progresif Indonesia<br/>2. Memperkenalkan jiwa Entrepreneur Mahasiswa dalam rangka menyelesaikan permasalahan bangsa.<br/>3. Menumbuhkan mindset bahwa KM-ITB adalah wahana untuk pembelajaran hardskill maupun softskill serta berkolaborasi.<br/>4. Mendidik panitia pelaksana untuk menjadi pengkader yang sesuai bagi mahasiswa baru.<br/>5. Melibatkan kolaborasi dari elemen kemahasiswaan KM-ITB."
-        }
-      ]
-    },
-    {
-      "menu": "Tentang OHU",
-      "pages": [
-        {
-          "page_title": "",
-          "page_content": "<b>Apa itu Open House Unit ITB 2015?</b><br/>OHU ITB 2015 merupakan acara tahunan di ITB yg bertujuan untuk memfasilitasi massa ITB untuk menyalurkan minat dan bakatnya ke UKM yg ada di ITB, dan merupakan ajang unjuk kebolehan dari UKM di ITB untuk merekrut anggota.<br/>Acara: Opening Ceremony, Panggung Utama Museum OHU, Radio OHU, Bioskop OHU, Parade, Wahana Olahraga, Wahana Keilmuan, Wahana Budaya, Closing Ceremony.<br/><br/><b>Dimana OHU diadakan?</b><br/>Di Kampus ITB Ganesha, Jalan Ganesha No. 10 &amp; 12. Bandung.<br/><br/><b>Kapan?</b><br/>Hari Sabtu tanggal 29 Agustus 2015 pukul 08.00 – selesai<br/><br/><b>Siapa saja yang terlibat dalam OHU ITB 2015?</b><br/>OHU ITB 2015 diselenggarakan oleh Keluarga Mahasiswa ITB (KM-ITB), Panitia Open House Unit (OHU) ITB 2015 dan diikuti oleh Mahasiswa ITB, Unit Kegiatan Mahasiswa ITB, serta Komunitas"
-        },
-        {
-          "page_title": "",
-          "page_content": "<b>Kenapa wajib datang ke OHU ITB 2015?</b><br/>Acaranya seru-seru, diantaranya:<br/><br/><b>a. Pre-event Ceremony</b><br/>Pre-event Ceremony akan dilaksanakan pada Selasa, 25 Agustus 2015 di daerah antara DPR dan sunken. Pre-event mempertunjukkan awal cerita yang dibawa pada OHU kali ini<br/><br/><b>b. Opening Ceremony</b><br/>Opening Ceremony merupakan acara pembuka OHU 2015. Acara opening ceremony akan dibuka dengan penampilan kolaborasi performance dari 88 UKM yang ada di ITB, mulai dari rumpun pendidikan, agama, media, budaya, kajian, dan olahraga. Acara ini merupakan daya tarik terbesar dalam acara OHU 2015 karena untuk pertama kalinya bisa menyatukan UKM yang ada di ITB dalam bentuk kolaborasi unit-unit."
-        },
-        {
-          "page_title": "",
-          "page_content": "<b>c. Panggung Utama</b><br/>Panggung utama menjadi pusat keramaian dari OHU 2014. Di panggung utama akan diselenggarakan opening ceremony, closing ceremony, dan penampilan dari seluruh UKM yang ada di ITB. Setiap UKM akan diberikan waktu 15 – 20 menit untuk menampilkan performance terbaiknya di panggung utama.<br/><br/><b>d. Museum OHU</b><br/>UKM di ITB terkenal dengan karya dan kreativitasnya. Agar karya tersebut dapat lebih dikenal dan dinikmati oleh khalayak ramai, maka dibuatlah sebuah Museum OHU yang berisi dokumentasi kegiatan-kegiatan maupun karya-karya UKM. Museum OHU ini akan dikemas dalam bentuk pameran interaktif berbentuk motion grafis video di dalam Information Center ITB<br/><br/><b>e. Radio OHU</b><br/>Radio OHU merupakan fasilitas untuk publikasi dan promosi UKM di ITB. Radio OHU merupakan usaha untuk memfasilitasi unit media, unit kajian, dan unit pendidikan dalam menampilkan hasil karya mereka. Radio OHU akan mengintegrasi seluruh tempat di seputaran area OHU sehingga mampu memeriahkan suasana OHU."
-        },
-        {
-          "page_title": "",
-          "page_content": "<b>f. Bioskop OHU</b><br/>Bioskop OHU adalah sebuah wahana cinema yang akan menampilkan suatu film “special” yang merupakan karya dari UKM ITB. Bioskop OHU juga merupakan wadah bagi para UKM untuk menunjukkan teasernya dan dikemas seakan-akan berada di cinema. Pemutaran teaser-teaser UKM di awal sebelum film dimulai, akan menjadi wadah promosi eksistensi unit secara visual.<br/><br/><b>g. Parade</b><br/>Parade OHU 2015 dikemas dalam bentuk pawai internal kampus yang diikuti oleh seluruh UKM di ITB pada pertengahan acara OHU 2015. Parade ini akan diisi dengan penampilan atraktif dari unit MBWG-ITB , cosplay dari Genshiken ITB, dan UKM lainnya. Parade ini bertujuan untuk lebih meningkatkan euforia dari pengunjung dan menunjukkan keanekaragaman UKM di ITB. Pawai ini juga akan dimeriahkan oleh maskot OHU ITB 2015."
-        },
-        {
-          "page_title": "",
-          "page_content": "<b>h. Wahana Olahraga</b><br/>Wahana Olahraga adalah tempat bagi UKM rumpun olahraga untuk bisa menampilkan kemampuannya dalam berolahraga. Selain itu, setiap UKM dari rumpun olahraga dapat membuat permainan yang berkaitan dengan bidangnya sehingga para pengunjung bisa menikmati bahkan ikut berpartisipasi di dalamnya.<br/><br/><b>i. Wahana Keilmuan</b><br/>Wahana Keilmuan adalah sebuah wahana yang berisi permainan-permainan yang berhubungan dengan keilmuan. Ini merupakan sarana UKM rumpun pendidikan, kajian, dan agama untuk menunjukkan identitasnya dalam bentuk permainan yang menarik dan berbasis pola pikir dan keilmuan.<br/><br/><b>j. Wahana Budaya</b><br/>Wahana Budaya adalah sebuah wahana yang berisi pertunjukan-pertunjukan yang berhubungan dengan identitas budayanya. Di sini, UKM rumpun seni dan budaya dapat berunjuk diri dengan menunjukkan permainan yang unik karena permainan tersebut berasal dari tiap-tiap daerah masing-masing dari UKM budaya."
-        },
-        {
-          "page_title": "",
-          "page_content": "<b>k. Closing Ceremony</b><br/>Seluruh rangkaian kegiatan OHU 2015 akan ditutup dalam closing ceremony yang berisi performance drama musikal digabung dengan video mapping sehingga penutupan akan menjadi puncak dan penyelesaian acara OHU 2015. Selain itu ada  penampilan kolaborasi dari UKM yang ada di ITB.<br/><br/><b>Acara OHU ITB 2015 tidak dipungut biaya dan terbuka untuk umum</b>"
+          "page_content": "<b>Visi</b><br/>INTEGRASI ITB 2016 yang melahirkan perintis pergerakan berasaskan empati<br/><br/><b>Misi</b><br/>1. Menumbuhkan empati panitia pelaksana dan peserta INTEGRASI ITB 2016 terhadap masyarakat.<br/>2. Menyadarkan peserta INTEGRASI ITB 2016 akan perannya sebagai perintis pergerakan.<br/>3. Memperkenalkan potensi kolaborasi lembaga KM ITB dalam mengusahakan solusi dari permasalahan bangsa.<br/>4. Menjadi sarana pendidikan panitia pelaksana sebagai role model bagi mahasiswa baru."
         }
       ]
     },
@@ -50,12 +21,16 @@
           "page_content": "<b>Deskripsi</b><br/>1. Menyadarkan akan peran sebagai Intelektual Progresif Indonesia<br/>2. Memperkenalkan jiwa Entrepreneur Mahasiswa dalam rangka menyelesaikan permasalahan bangsa.<br/>3. Menumbuhkan mindset bahwa KM-ITB adalah wahana untuk pembelajaran hardskill maupun softskill serta berkolaborasi.<br/>4. Mendidik panitia pelaksana untuk menjadi pengkader yang sesuai bagi mahasiswa baru.<br/>5. Melibatkan kolaborasi dari elemen kemahasiswaan KM-ITB.<br/><br/><b>Versi</b><br/>2.0<br/><br/><b>Credits</b><br/>Pengembangan aplikasi ini merupakan salah satu kolaborasi antara keilmuan informatika dan desain. Kolaborasi ini diwadahi dengan adanya divisi IT di OSKM 2015"
         },
         {
-          "page_title": "Tim",
+          "page_title": "Tim versi 1",
           "page_content": "<b>Taufiq Akbar Rosaydi</b><br/>Sistem dan Teknologi Informasi 2012<br/>sebagai Project Manager & System Analyst<br/><br/><b>Gilang Julian Suherik</b><br/>Teknik Informatika 2012<br/>sebagai Lead Programmer<br/><br/><b>Yanfa Adiputra</b><br/>Teknik Informatika 2012<br/>sebagai Programmer<br/><br/><b>Wigy Ramadhan</b><br/>Desain Produk 2013<br/>sebagai Lead UI/UX Designer<br/><br/><b>Andreas Andika</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Lead Graphic/Motion Designer<br/><br/><b>Petra Legato</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Graphic/Motion Designer<br/><br/><b>Mirza Annisa</b><br/>Desain Interior 2013<br/>sebagai UI/UX Designer"
         },
         {
-          "page_title": "Tim",
+          "page_title": "Tim versi 1",
           "page_content": "<b>Nanda Hadi</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Tim Grafis OSKM<br/><br/><b>Lauren Hana</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Tim Grafis OSKM<br/><br/><b>Krisan Faretty</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Tim Grafis OSKM<br/><br/><b>Salma Tsaniya</b><br/>Desain Komunikasi Visual 2013<br/>sebagai Tim Grafis OSKM<br/><br/><b>Hani</b><br/>Teknik Geodesi 2013<br/>sebagai Intrakampus OSKM<br/><br/><b>Indra Karno</b><br/>Kimia 2013<br/>sebagai Intrakampus OSKM"
+        },
+        {
+          "page_title": "Tim versi 2",
+          "page_content": "<b>Theo Tanadi</b><br/>Sistem dan Teknologi Informasi 2014<br/>sebagai Project Manager<br/><br/><b>Hanifa Qurratuaini</b><br/>Sistem dan Teknologi Informasi 2013<br/>sebagai System Analyst<br/><br/><b>Rahman Adianto</b><br/>Teknik Informatika 2013<br/>sebagai Lead Programmer<br/><br/><b>Erick Chandra</b><br/>Teknik Informatika 2013<br/>sebagai Programmer<br/><br/><b>Ali Akbar</b><br/>Teknik Informatika 2014<br/>sebagai Data Scientist"
         }
       ]
     },
@@ -326,7 +301,7 @@
           "kepanjangan": "-",
           "deskripsi arah gerak dan kegiatan": "Kabinet Keluarga Mahasiswa Institut Teknologi Bandung, selanjutnya disingkat Kabinet KM-ITB, adalah lembaga eksekutif tertinggi di tingkat pusat dalam kehidupan kemahasiswaan di seluruhkampus Institut Teknologi Bandung dan bertanggung jawab kepada Kongres KM-ITB. Kabinet KM-ITB mendapatkan dukungan sumber daya dari Himpunan Mahasiswa Jurusan dan Unit Kegiatan Mahasiswa untuk melaksanakan program pemenuhan kebutuhan seluruh mahasiswa dan program terpusat yang telah disetujui oleh Kongres KM-ITB.Kabinet KM-ITB mengordinasikan Himpunan Mahasiswa Jurusan dan Unit Kegiatan Mahasiswa untuk melaksanakan program pemenuhan kebutuhan (P3) seluruh mahasiswa dan program terpusat setelah mendapatkan persetujuan dari Kongres KM-ITB.",
           "nama ketua": "M Pratama Gerry MT'11",
-          "Program Kerja Unggulan": "-OSKM ITB, OHU ITB, ITB in Move, Leadership Summit, Parade Wisuda ITB, ITB Scholarship Fair, Transnangor, -Keluhan dan Curhatan (kencur) Kesejahteraan Mahasiswa, Diskusi Publik Eksternal KM-ITB, Kajian 1 Tahun Jokowi, ITB Eco Campus, ITB Resilience, OPEN DATA ITB, Ganesha Investment Book, ITB Gallery, Ganesha Award, Poin Inspirasi, ITB Sehat, Kampanye budaya",
+          "Program Kerja Unggulan": "INTEGRASI ITB, ITB in Move, Leadership Summit, Parade Wisuda ITB, ITB Scholarship Fair, Transnangor, Keluhan dan Curhatan (kencur) Kesejahteraan Mahasiswa, Diskusi Publik Eksternal KM-ITB, ITB Eco Campus, ITB Resilience, OPEN DATA ITB, Ganesha Investment Book, ITB Gallery, Ganesha Award, Poin Inspirasi, ITB Sehat, Kampanye budaya",
           "facebook": "Keluarga Mahasiswa ITB [official]",
           "twitter": "@KM_ITB",
           "website": "km.itb.ac.id",
@@ -2373,6 +2348,7 @@
           "subkantin": [
             {
               "nama": "Mie Ayam Kraton",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Mie Ayam Kraton Kuah",
@@ -2430,6 +2406,7 @@
             },
             {
               "nama": "Sambalado Express",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Nasi Goreng Padang Puash",
@@ -2455,6 +2432,7 @@
             },
             {
               "nama": "Ayamayaman!",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Chicken Skkn Rice",
@@ -2496,6 +2474,7 @@
             },
             {
               "nama": "Kedai BOBOKO",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Paket Pahamu",
@@ -2537,6 +2516,7 @@
             },
             {
               "nama": "Dapur Mama Mimi",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Nasi Soto Padang",
@@ -2566,6 +2546,7 @@
             },
             {
               "nama": "Say Cheez",
+              "foto": "img_east_corner",
               "daftar_makanan": [
                 {
                   "nama": "Tengkleng Ayam",
@@ -2826,7 +2807,7 @@
         {
           "gedung": "Oktagon",
           "jumlah": "9 ruangan",
-          "header foto": "-",
+          "header foto": "gedung_oktagon",
           "ruangan": [
             {
               "nama": "9016",
@@ -2869,7 +2850,7 @@
         {
           "gedung": "TVST",
           "jumlah": "3 ruangan",
-          "header foto": "-",
+          "header foto": "gedung_tvst",
           "ruangan": [
             {
               "nama": "9022",
@@ -3100,7 +3081,7 @@
         {
           "gedung": "Labtek I",
           "jumlah": "5 ruangan",
-          "header foto": "-",
+          "header foto": "gedung_labtek_i",
           "ruangan": [
             {
               "nama": "9401",

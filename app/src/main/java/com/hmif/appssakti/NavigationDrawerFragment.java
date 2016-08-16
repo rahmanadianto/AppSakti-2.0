@@ -100,12 +100,10 @@ public class NavigationDrawerFragment extends Fragment {
 		itemsText.add(getString(R.string.title_section1));
 		itemsText.add(getString(R.string.title_section2));
 		itemsText.add(getString(R.string.title_section3));
-		itemsText.add(getString(R.string.title_section4));
 
 		List<String> itemsIcon = new ArrayList<>();
 		itemsIcon.add("icon_logo_white");
-		itemsIcon.add("icon_oskm_white");
-		itemsIcon.add("icon_ohu");
+		itemsIcon.add("icon_integrasi_white");
 		itemsIcon.add("icon_about");
 
 		mDrawerListView.setAdapter(new IconTextAdapter(getActivity(), R.layout

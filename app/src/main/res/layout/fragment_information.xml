@@ -203,7 +203,7 @@
 			android:id="@+id/title_image"
 			android:layout_width="@dimen/title_image_width"
 			android:layout_height="@dimen/title_image_height"
-			android:src="@drawable/icon_oskm_white"/>
+			android:src="@drawable/icon_integrasi_white"/>
 
 	</LinearLayout>
 

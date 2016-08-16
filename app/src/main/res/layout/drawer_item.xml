@@ -13,8 +13,7 @@
 		android:id="@+id/item_icon"
 		android:layout_width="25dp"
 		android:layout_height="25dp"
-		android:scaleType="centerCrop"
-		android:src="@drawable/icon_oskm_white"/>
+		android:scaleType="centerCrop"/>
 
 	<TextView
 		android:id="@+id/item_text_general"

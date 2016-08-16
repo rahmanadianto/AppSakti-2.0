@@ -232,7 +232,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				}
 				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Kantin")) {
 					title = "Kantin";
-					imgUri = "hmif";
+					imgUri = "home_kantin";
 				}
 				else if (jsonObject.has("foto")){
 					title = jsonObject.getString("nama");
@@ -244,7 +244,7 @@ public class ListIconFragment extends Fragment implements ObservableScrollViewCa
 				}
 				else if (jsonObject.has("menu") && jsonObject.getString("menu").equals("Ruang")) {
 					title = "Ruang Kuliah";
-					imgUri = "hmif";
+					imgUri = "home_ruang";
 				}
 				else if (jsonObject.has("gedung")) {
 					title = jsonObject.getString("gedung");

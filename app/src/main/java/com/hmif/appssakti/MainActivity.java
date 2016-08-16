@@ -55,8 +55,7 @@ public class MainActivity extends AppCompatActivity
 
 	// Data
 	private JSONArray jsonArray;
-	private JSONObject aboutOSKM;
-	private JSONObject aboutOHU;
+	private JSONObject aboutIntegrasi;
 	private JSONObject aboutApp;
 	private JSONObject kemahasiswaan;
 	private JSONArray lembagaPusat;
@@ -105,20 +104,14 @@ public class MainActivity extends AppCompatActivity
 							mainMenuIcon))
 					.commit();
 				 break;
-			//OSKM ITB
+			//Integrasi ITB
 			case 1 :
 				fragmentManager.beginTransaction()
-					.replace(R.id.container, SlideViewFragment.newInstance(aboutOSKM), "oskm")
+					.replace(R.id.container, SlideViewFragment.newInstance(aboutIntegrasi), "integrasi")
 					.commit();
 				 break;
-			//Open House Unit
-			case 2:
-				fragmentManager.beginTransaction()
-					.replace(R.id.container, SlideViewFragment.newInstance(aboutOHU), "ohu")
-					.commit();
-				break;
 			//About
-			case 3:
+			case 2:
 				fragmentManager.beginTransaction()
 					.replace(R.id.container, SlideViewFragment.newInstance(aboutApp), "app")
 					.commit();
@@ -379,16 +372,15 @@ public class MainActivity extends AppCompatActivity
 		protected Void doInBackground(Void... params) {
 
 			try {
-				jsonArray = loadJSON(R.raw.data).getJSONArray("OSKM");
-				aboutOSKM = jsonArray.getJSONObject(0);
-				aboutOHU = jsonArray.getJSONObject(1);
-				aboutApp = jsonArray.getJSONObject(2);
-				kemahasiswaan = getJSONObject("kemahasiswaan");
-				lembagaPusat = getJSONObject("lembaga pusat").getJSONArray("isi");
-				himpunan = getJSONObject("Himpunan");
-				unit = getJSONObject("Unit");
-				kantin = getJSONObject("Kantin");
-				ruangan = getJSONObject("Ruang");
+				jsonArray = loadJSON(R.raw.data).getJSONArray("DATA");
+				aboutIntegrasi = jsonArray.getJSONObject(0);
+				aboutApp = jsonArray.getJSONObject(1);
+				kemahasiswaan = jsonArray.getJSONObject(2);
+				lembagaPusat = jsonArray.getJSONObject(3).getJSONArray("isi");
+				himpunan = jsonArray.getJSONObject(4);
+				unit = jsonArray.getJSONObject(5);
+				kantin = jsonArray.getJSONObject(6);
+				ruangan = jsonArray.getJSONObject(7);
 			} catch (JSONException | IOException e) {
 				e.printStackTrace();
 			}
@@ -407,24 +399,6 @@ public class MainActivity extends AppCompatActivity
 			result.append(line);
 		}
 		return new JSONObject(result.toString());
-	}
-
-	public JSONObject getJSONObject(String selection) throws JSONException {
-
-		try {
-			for (int i = 0; i < jsonArray.length(); i++) {
-				JSONObject obj = jsonArray.getJSONObject(i);
-
-				if (obj.getString("menu").equals(selection)) {
-					return obj;
-				}
-			}
-		}
-		catch (Exception e) {
-			return null;
-		}
-
-		return null;
 	}
 
 	public static void loadImage(Context context, ImageView dest, String uri) {

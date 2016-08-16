@@ -139,8 +139,8 @@ public class MainMenuFragment extends Fragment {
 				"home_unit",
 				"home_kongres",
 				"home_mwa_wm",
-				"hmif",
-				"hmif"
+				"home_kantin",
+				"home_ruang"
 		};
 
 		MainActivity.loadImage(getContext(), dest, urls[image_id]);
