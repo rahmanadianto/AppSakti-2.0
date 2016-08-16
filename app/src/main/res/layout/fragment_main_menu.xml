@@ -322,7 +322,7 @@
 					android:layout_height="match_parent">
 
 					<ImageView
-						android:background="#FDD835"
+						android:background="#876030"
 						android:id="@+id/menu_image7"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
@@ -363,7 +363,7 @@
 					android:layout_height="match_parent">
 
 					<ImageView
-						android:background="#FDD835"
+						android:background="#72af9c"
 						android:id="@+id/menu_image8"
 						android:layout_width="match_parent"
 						android:layout_height="match_parent"
