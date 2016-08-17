@@ -5,7 +5,7 @@
     android:paddingTop="10dp"
     android:paddingStart="20dp"
     android:paddingEnd="20dp"
-    tools:context="com.hmif.appssakti.ImagePageFragment">
+    tools:context="com.inkubatorit.appssakti.ImagePageFragment">
 
     <TextView
         android:id="@+id/image_title"

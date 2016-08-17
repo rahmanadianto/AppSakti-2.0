@@ -1,4 +1,4 @@
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 import org.json.JSONObject;
 

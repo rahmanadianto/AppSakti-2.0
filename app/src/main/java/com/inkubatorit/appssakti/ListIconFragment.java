@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -18,7 +18,7 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
-import com.hmif.custom.OnCardClickListener;
+import com.inkubatorit.custom.OnCardClickListener;
 import com.nineoldandroids.view.ViewHelper;
 
 import org.json.JSONArray;

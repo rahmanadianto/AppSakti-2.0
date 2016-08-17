@@ -6,7 +6,7 @@
     android:paddingTop="10dp"
     android:paddingLeft="20dp"
     android:paddingRight="20dp"
-    tools:context="com.hmif.appssakti.PageFragment">
+    tools:context="com.inkubatorit.appssakti.PageFragment">
 
     <TextView
         android:id="@+id/page_title"

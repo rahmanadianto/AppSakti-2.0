@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 
 import android.os.Bundle;

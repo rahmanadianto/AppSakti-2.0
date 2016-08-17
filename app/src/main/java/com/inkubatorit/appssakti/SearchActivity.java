@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 import android.app.SearchManager;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.hmif.custom.IconTextAdapter;
+import com.inkubatorit.custom.IconTextAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

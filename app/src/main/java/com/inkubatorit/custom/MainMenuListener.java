@@ -1,4 +1,4 @@
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 /**
  * Created by gilang on 05/08/2015.

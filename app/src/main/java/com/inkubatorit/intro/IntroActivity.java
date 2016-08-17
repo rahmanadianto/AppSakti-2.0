@@ -1,4 +1,4 @@
-package com.hmif.intro;
+package com.inkubatorit.intro;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,10 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import com.hmif.appssakti.MainActivity;
-import com.hmif.appssakti.R;
-import com.hmif.custom.CirclePageIndicator;
-import com.hmif.custom.IntroPagerAdapter;
+import com.inkubatorit.appssakti.MainActivity;
+import com.inkubatorit.appssakti.R;
+import com.inkubatorit.custom.CirclePageIndicator;
+import com.inkubatorit.custom.IntroPagerAdapter;
 
 public class IntroActivity extends ActionBarActivity implements ViewPager.OnPageChangeListener,
 		View.OnClickListener{

@@ -22,7 +22,7 @@
 		android:layout_marginRight="@dimen/standard_50dp"
 		android:background="#fff"/>
 
-	<com.hmif.custom.CirclePageIndicator
+	<com.inkubatorit.custom.CirclePageIndicator
 		android:id="@+id/circle_indicator"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"

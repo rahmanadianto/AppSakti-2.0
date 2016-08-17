@@ -1,12 +1,10 @@
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.PagerAdapter;
-import android.view.View;
 
-import com.hmif.intro.IntroFragment;
+import com.inkubatorit.intro.IntroFragment;
 
 /**
  * Created by gilang on 08/07/2015.

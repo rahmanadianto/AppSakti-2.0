@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.hmif.custom.IconTextAdapter;
+import com.inkubatorit.custom.IconTextAdapter;
 
 import java.util.ArrayList;
 import java.util.List;

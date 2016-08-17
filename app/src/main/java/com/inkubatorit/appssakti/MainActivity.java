@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 import android.content.ActivityNotFoundException;
 import android.content.Context;
@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.hmif.custom.MainMenuListener;
-import com.hmif.custom.OnCardClickListener;
+import com.inkubatorit.custom.MainMenuListener;
+import com.inkubatorit.custom.OnCardClickListener;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,4 +1,4 @@
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 import android.content.Context;
 import android.support.annotation.Nullable;
@@ -10,8 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.hmif.appssakti.MainActivity;
-import com.hmif.appssakti.R;
+import com.inkubatorit.appssakti.MainActivity;
+import com.inkubatorit.appssakti.R;
 
 import java.util.List;
 

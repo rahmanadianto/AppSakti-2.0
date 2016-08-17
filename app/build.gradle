@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.hmif.appssakti"
+        applicationId "com.inkubatorit.appssakti"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 20

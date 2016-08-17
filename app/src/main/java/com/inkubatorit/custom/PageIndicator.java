@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 import android.support.v4.view.ViewPager;
 

@@ -1,4 +1,4 @@
-package com.hmif.custom;
+package com.inkubatorit.custom;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import com.hmif.appssakti.R;
+import com.inkubatorit.appssakti.R;
 
 import java.util.List;
 

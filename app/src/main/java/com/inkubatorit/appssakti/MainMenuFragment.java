@@ -1,4 +1,4 @@
-package com.hmif.appssakti;
+package com.inkubatorit.appssakti;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import com.hmif.custom.MainMenuListener;
+import com.inkubatorit.custom.MainMenuListener;
 
 import java.util.List;
 
